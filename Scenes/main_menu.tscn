@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg57ktbx4iror"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_q2s6e"]
+[ext_resource type="Texture2D" uid="uid://r5gopohpg3hj" path="res://Sprites/Background/1684749199223.jpg" id="2_iosrf"]
+[ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="3_nwq8u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25tdi"]
+bg_color = Color(0.109804, 0.105882, 0.105882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u82nq"]
+bg_color = Color(0.85098, 0.85098, 0.85098, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_q2s6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+position = Vector2(642, 360.5)
+scale = Vector2(0.772727, 0.613523)
+texture = ExtResource("2_iosrf")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 512.0
+offset_bottom = 728.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_25tdi")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 480.0
+offset_bottom = 352.0
+theme_override_colors/font_outline_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_constants/outline_size = 24
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = ExtResource("3_nwq8u")
+theme_override_font_sizes/font_size = 48
+text = "MAHASISWA 
+KEREN"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_lock_ = true
+
+[node name="PanelPlay" type="Panel" parent="."]
+offset_left = 96.0
+offset_top = 352.0
+offset_right = 416.0
+offset_bottom = 416.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u82nq")
+
+[node name="ButtonPlay" type="Button" parent="PanelPlay"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 64.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Mulai"
+flat = true
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="PanelTutorial" type="Panel" parent="."]
+offset_left = 96.0
+offset_top = 432.0
+offset_right = 416.0
+offset_bottom = 496.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u82nq")
+
+[node name="ButtonTutorial" type="Button" parent="PanelTutorial"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 64.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Tutorial"
+flat = true
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="PanelKeluar" type="Panel" parent="."]
+offset_left = 96.0
+offset_top = 512.0
+offset_right = 416.0
+offset_bottom = 576.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u82nq")
+
+[node name="ButtonKeluar" type="Button" parent="PanelKeluar"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 64.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Keluar"
+flat = true
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="PlayerName" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 680.0
+offset_right = 115.0
+offset_bottom = 706.0
+text = "Player Name"
+
+[connection signal="pressed" from="PanelPlay/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="PanelTutorial/ButtonTutorial" to="." method="_on_button_tutorial_pressed"]
+[connection signal="pressed" from="PanelKeluar/ButtonKeluar" to="." method="_on_button_keluar_pressed"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo1c8fh6cc6iv"]
+
+[ext_resource type="Script" path="res://Scripts/StartScreen.cs" id="1_18m56"]
+[ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="2_1w5ll"]
+[ext_resource type="Script" path="res://Scripts/ParallaxBackground.cs" id="2_r3cl2"]
+[ext_resource type="FontFile" uid="uid://dxtofwvuov7a8" path="res://Fonts/Margarine.ttf" id="3_b4edg"]
+[ext_resource type="Texture2D" uid="uid://defxdduaotgfa" path="res://Sprites/Character/699424.jpg" id="5_bo8wl"]
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource("1_18m56")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+offset_left = -8.0
+offset_top = 208.0
+offset_right = 1288.0
+offset_bottom = 464.0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_top = 16.0
+offset_right = 1280.0
+offset_bottom = 656.0
+theme_override_colors/font_outline_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_constants/outline_size = 24
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = ExtResource("2_1w5ll")
+theme_override_font_sizes/font_size = 84
+text = "MAHASISWA 
+KEREN"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 464.0
+offset_right = 832.0
+offset_bottom = 528.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_b4edg")
+theme_override_font_sizes/font_size = 32
+text = "Ketuk untuk memulai kisahmu"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_r3cl2")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.627451, 0.627451, 0.627451, 1)
+position = Vector2(640, 360.5)
+scale = Vector2(0.3125, 0.312337)
+texture = ExtResource("5_bo8wl")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c3foep8b4t7cd"]
+
+[node name="TutorialScene" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 128.0
+offset_bottom = 64.0
+text = "TUTORIAL"

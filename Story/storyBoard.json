@@ -1,0 +1,791 @@
+{
+  "scene1": {
+	"id": 1,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Nama kamu adalah *PlayerName*, kamu adalah mahasiswa sistem informasi semester 5, dan saat ini kamu sedang bersiap siap kembali ke kosan kamu setelah liburan yang tenang dan menyenangkan."
+	  ],
+	  "Player": ["Apa yang sebaiknya ku lakukan sekarang?"]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Berbicara dengan orang tua",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 2,
+		"text": "Menelpon teman",
+		"stats": { "affection": 0, "social": 40, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 3,
+		"text": "Lanjut ngoding dulu gak siih",
+		"stats": { "affection": 0, "social": 0, "academic": 40, "economy": 0 }
+	  },
+	  {
+		"id": 4,
+		"text": "Mengecek kembali barang dan persediaan",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 40 }
+	  }
+	]
+  },
+
+  "scene2": {
+	"id": 2,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Kamu baru saja sampai di kos, apa yang akan kamu lakukan sekarang?"
+	  ]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Berbicara dengan ibu kost",
+		"stats": { "affection": 0, "social": 5, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 2,
+		"text": "Berbicara dengan teman kost",
+		"stats": { "affection": 0, "social": 7, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 3,
+		"text": "Lanjut belajar ngoding",
+		"stats": { "affection": 0, "social": -5, "academic": 7, "economy": 0 }
+	  },
+	  {
+		"id": 4,
+		"text": "Cari angin segar",
+		"stats": { "affection": 0, "social": -5, "academic": 0, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene3Opt1": {
+	"id": 3,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Kamu berbincang dengan ibu kos.",
+		"Setelah berbincang selama 30 menit, kamu kembali ke kos."
+	  ],
+	  "Player": [
+		"Hehe iya bu tadi barusan aja sampai naik Trevel Ratu Ibu, ngambil Tiket berangkat malam."
+	  ],
+	  "IbuKost": ["Mas *PlayerName* sudah Sampai ya?"]
+	}
+  },
+
+  "scene3Opt2": {
+	"id": 3,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Kamu berkumpul dengan teman kos.",
+		"Iqbal membuka bungkus jajanan.",
+		"Kalian memakan jajanan bersama dan mengobrol sampai tengah hari.",
+		"Kamu Kembali ke kamar mu dan melanjukan merapikan barang barang dikosan mu."
+	  ],
+	  "Iqbal": ["Wedeh baru nyampe nih!", "Makan nih jajanan!"],
+	  "Akhdan": ["Aku juga baru nyampe sih kemaren."]
+	}
+  },
+
+  "scene3Opt3": {
+	"id": 3,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Kamu belajar ngoding sampai siang.",
+		"Sekarang apa yang akan kamu lakukan?"
+	  ]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Tidur Sampai sore",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 2,
+		"text": "Lanjut merapikan barang barang mu",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 3,
+		"text": "Cari angin sebentar",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene3Opt4": {
+	"id": 3,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Kamu berkeliling kota dengan menggunakan motormu dan mendapatkan mood yang baik selama berjalan jalan.",
+		"Apa yang akan kamu lakukan sekarang?"
+	  ]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Lansung pulang ke kos",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 2,
+		"text": "Mampir ke toko untuk membeli jajan dan dibawa pulang",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene4Opt1": {
+	"id": 4,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Kamu tidur dikamar mu, dengan suasana yang tenang dikosan mu kualitas tidur mu meningkat dan membuatmu tertidur hingga Sore dengan sangat nyeyak yang membuat mu tidur seperti orang yang sedang koma."
+	  ]
+	}
+  },
+
+  "scene4Opt2": {
+	"id": 4,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Kamu berada di kamarmu dan merapikan barang barang yang ada didalam kamarmu.",
+		"Diantara barang barang yang kamu rapikan kamu menemukan sebuah foto yang berisikan Kamu dan teman teman mu yang sedang berkumpul bersama dan bersenang senang bersama.",
+		"Kamu melanjutkan merapikan barang di kamar mu."
+	  ],
+	  "Player": ["Foto ini masih ada ternyata, ada ada saja ya waktu itu..."]
+	}
+  },
+
+  "scene4Opt3": {
+	"id": 4,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Kamu berkeliling Kota dengan menggunakan motor Supra kesayangan mu.",
+		"Dikarenakan suasana yang panas disiang hari kamu memutuskan untuk mampir ke toko untuk membeli minuman."
+	  ]
+	}
+  },
+
+  "scene4Opt4": {
+	"id": 4,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Setelah berkendara Sebentar kamu menemukan toko yang bernama Toko Manusia Taat dan memutuskan untuk mampir.",
+		"Setelah kamu turun dari motor Supra legend mu, tiba tiba terdengar suara teriakan di dekat mu.",
+		"Kamu melihat ke arah teriakan tersebut dan dengan sigap mengetahui itu merupakan sebuah tindakan pencopetan.",
+		"Dengan sigap kamu menyandung pencopet yang lari ke arahmu dan memberi kuncian maut dari gerakan silat yang kamu pelajari.",
+		"Pencopet itu melepas tas yang ia copet lalu kamu mengambil tas tersebut dan dengan bantuan warga sekitar pencopet tersebut ditangkap dan dibawa ke pihak berwajib."
+	  ],
+	  "Player": ["Kembalikan dompet nya!"],
+	  "Heroine": ["Kyaaaaaa!"],
+	  "Pencopet": ["Arrrrrgggg!"]
+	}
+  },
+
+  "sceneSpecial1": {
+	"id": 4,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Setelah tertangkapnya pencopet tersebut kamu mengembalikan tas yang dicopet ke pemiliknya.",
+		"Wajah putih mulus nan seperti bidadari walau hanya sekilah hati mu berdegub dikarenakan kecantikan dari wanita tersebut.",
+		"Wanita tersebut pergi dari tempat itu dan meninggalkanmu sebuah kartu nama yang berisikan nama dan kontaknya."
+	  ],
+	  "Player": ["Gak apa-apa kan kak?"],
+	  "Heroine": [
+		"Ah iya... makasih ya udah ngebantuin aku, terimakasih banget, maaf aku lagi buru-buru, ini kartu nama aku makasih ya!"
+	  ]
+	}
+  },
+
+  "scene5": {
+	"id": 5,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Kamu melihat barang-barang di kamarmu masih belum tersusun rapi, dan kamu memutuskan untuk merapikannya."
+	  ]
+	}
+  },
+
+  "scene6": {
+	"id": 6,
+	"week": 0,
+	"dialog": {
+	  "Narator": [
+		"Setelah hari yang panjang ini kamu memutuskan untuk mengakhiri hari ini dan pergi ke kasurmu untuk tidur."
+	  ],
+	  "Player": ["Waktunya tidur."]
+	}
+  },
+
+  "scene7": {
+	"id": 7,
+	"week": 1,
+	"dialog": {
+	  "Narator": [
+		"Kamu melihat teman-temanmu yang sedang asik mengobrol dan menghampiri mereka.",
+		"Dosen sudah datang dan kelas pun dimulai."
+	  ],
+	  "Player": ["Sudah waktunya kembali ke kehidupan kampus."],
+	  "Arif": [
+		"Jadi semester 5 ini kalian ada rencana ikut program MBKM?",
+		"Kayanya cuma aku yang milih magang. Kamu gimana *PlayerName*?"
+	  ],
+	  "Ghani": ["Aku mungkin bakal ikut studi independen sih."],
+	  "Akhdan": ["Aku lebih tertarik PMM."],
+	  "Iqbal": ["Aku belum kepikiran, mungkin gak bakal ikut."],
+	  "Sabrian": ["Aku juga tertarik sama PMM."]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Aku juga tertarik ikut magang",
+		"stats": { "affection": 0, "social": 0, "academic": 5, "economy": 5 }
+	  },
+	  {
+		"id": 2,
+		"text": "Aku tertarik sama PMM biar bisa ke kampus lain",
+		"stats": { "affection": 0, "social": 5, "academic": 5, "economy": 0 }
+	  },
+	  {
+		"id": 3,
+		"text": "Mungkin studi independen",
+		"stats": { "affection": 0, "social": 0, "academic": 10, "economy": 0 }
+	  },
+	  {
+		"id": 4,
+		"text": "Yahh belum tau juga sih",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene8": {
+	"id": 8,
+	"week": 1,
+	"dialog": {
+	  "Narator": ["Dosen keluar dari lab."],
+	  "Dosen": [
+		"Hari ini saya cukupkan sampai disini. Jangan lupa buat kelompok dan diskusikan ide projectnya."
+	  ],
+	  "Arif": ["Gas!"],
+	  "Ghani": ["Gas!"],
+	  "Akhdan": ["Katsu?"],
+	  "Iqbal": ["Gas!"],
+	  "Sabrian": ["Gas!"]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Gas!",
+		"stats": { "affection": 0, "social": 5, "academic": 0, "economy": -5 }
+	  },
+	  {
+		"id": 2,
+		"text": "Aku skip dulu, hemat uang",
+		"stats": { "affection": 0, "social": -3, "academic": 0, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene9Opt1": {
+	"id": 9,
+	"week": 1,
+	"dialog": {
+	  "Narator": [
+		"Kamu menunggu nasi ayam katsu dihidangkan.",
+		"Setelah menikmati makanan, semua langsung menuju rumah masing-masing."
+	  ],
+	  "IbuKantin": ["Oke dek!", "Minumannya apa?"],
+	  "Sabrian": ["Bu, katsunya 6 ya."]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Drink Beng-beng",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": -4 }
+	  },
+	  {
+		"id": 2,
+		"text": "Teh es",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": -3 }
+	  },
+	  {
+		"id": 3,
+		"text": "Air putih",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene9Opt2": {
+	"id": 9,
+	"week": 1,
+	"dialog": {
+	  "Player": ["Hmm...Enaknya ngapain ya?"]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Tidur",
+		"stats": { "affection": 0, "social": 0, "academic": -3, "economy": 0 }
+	  },
+	  {
+		"id": 2,
+		"text": "Nyantai",
+		"stats": { "affection": 0, "social": 0, "academic": 5, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene10Opt1": {
+	"id": 10,
+	"week": 1,
+	"dialog": {
+	  "Narator": [
+		"Kamu tertidur sampai maghrib.",
+		"Kamu bangun dan melihat banyak notifikasi panggilan tak terjawab di HP-mu."
+	  ],
+	  "Player": [
+		"Duh... Ada Zoom dadakan ternyata, Iqbal sama Akhdan belum pulang apa ya? Gak ada yang ngetokin pintu kamar soalnya. Yaudahlah toh baru sekali."
+	  ]
+	}
+  },
+
+  "scene10Opt2": {
+	"id": 10,
+	"week": 1,
+	"dialog": {
+	  "Narator": [
+		"Kamu memainkan HP-mu dengan asik.",
+		"Kamu join Zoom dan mengikuti perkuliahan."
+	  ],
+	  "Dosen": [
+		"Selamat siang dek, karena besok saya ada kegiatan dan tidak bisa melaksanakan perkuliahan maka kita ganti sore ini melalui zoom ya."
+	  ],
+	  "Player": ["Untung gak tidur, bisa-bisa gak ikutan zoom ntar."]
+	}
+  },
+
+  "scene11": {
+	"id": 11,
+	"week": 2,
+	"dialog": {
+	  "Narator": [
+		"Kamu yang sedang berkumpul dengan teman-temanmu dihampiri oleh seorang pengurus himpunan mahasiswa."
+	  ],
+	  "Pengurus": [
+		"Hai kalian.. Himpunan kita lagi buka lowongan buat panitia pentas seni kalian mau coba daftar?"
+	  ],
+	  "Sabrian": ["Aku skip, mau fokus ngoding."],
+	  "Ghani": ["Sama."],
+	  "Iqbal": ["Aku ada kegiatan lain, jadi nggak dulu."],
+	  "Akhdan": ["Liat sikon dulu, tapi lebih ke nggak tertarik sih."],
+	  "Arif": ["Aku sibuk mengkurir jadi tidak bisa."]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Boleh juga, nanti aku daftar. Gimana caranya?",
+		"stats": { "affection": 0, "social": 10, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 2,
+		"text": "Hmm... pikir-pikir dulu",
+		"stats": { "affection": 0, "social": -3, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 3,
+		"text": "Skip juga",
+		"stats": { "affection": 0, "social": -3, "academic": 0, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene12Opt1": {
+	"id": 12,
+	"week": 2,
+	"dialog": {
+	  "Narator": [
+		"kamu bertukar nomor WA dengannya.",
+		"Setelah itu pengurus hima tersebut beranjak pergi."
+	  ],
+	  "Pengurus": [
+		"Kamu bisa pergi ke gedung utama jam 2 siang nanti ya. Kalau sebelum jam 2 ada yang mau ditanyakan kamu bisa bertanya ke saya melalui WhatsApp!"
+	  ],
+	  "Sabrian": ["Gampang banget kegoda kamu bang."],
+	  "Ghani": ["Wkwkwk."],
+	  "Iqbal": ["Dia seperti terkena genjutsu sales oddo."],
+	  "Akhdan": ["Aku mencium bau-bau konspirasi."],
+	  "Arif": ["Tul tuh, tumben banget ni orang mau ikut organisasi."]
+	}
+  },
+
+  "scene12Opt2  ": {
+	"id": 12,
+	"week": 2,
+	"dialog": {
+	  "Narator": [
+		"Pengurus hima tersebut pergi meninggalkan tempat kalian berada."
+	  ],
+	  "Pengurus": [
+		"Kalau kalian tiba-tiba berubah pikiran kalian bisa datang ke gedung utama jam 2 siang nanti. Jika ada yang ingin ditanyakan, kalian bisa bertanya ke ketua kelas masing-masing."
+	  ]
+	}
+  },
+
+  "scene13": {
+	"id": 13,
+	"week": 2,
+	"dialog": {
+	  "Arif": [
+		"Jadi ini hasil tugas kelompok kita sudah selesai dan sebentar lagi dipresentasikan, ada yang mau ditambah?"
+	  ]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Cukup",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 2,
+		"text": "Tambahkan beberapa hal",
+		"stats": { "affection": 0, "social": 0, "academic": 4, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene14": {
+	"id": 14,
+	"week": 2,
+	"dialog": {
+	  "Narator": [
+		"Tiap kelompok mempresentasikan ide project mereka untuk tugas akhir.",
+		"Dosen meniggalkan ruangan."
+	  ],
+	  "Dosen": [
+		"Baiklah, untuk 2 minggu ini tugas kalian adalah analisis apa saja kebutuhan dari sistem yang akan kalian buat."
+	  ],
+	  "Sabrian": ["Aku langsung pulang."],
+	  "Ghani": ["Aku langsung pulang."],
+	  "Iqbal": ["Aku ke kantin dulu."],
+	  "Akhdan": ["Aku juga. Lagi males masak."],
+	  "Arif": [
+		"Oke mungkin besok malam kita bakal mulai kerjain tugasnya, sekarang pada mau kemana? Langsung pulang?",
+		"Aku ikut ke kantin."
+	  ]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Langsung pulang aja",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 2,
+		"text": "Makan dulu di kantin",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": -3 }
+	  },
+	  {
+		"id": 3,
+		"text": "Aku mau daftar panitia Pensi tadi",
+		"stats": { "affection": 0, "social": 10, "academic": 0, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene15Opt1": {
+	"id": 15,
+	"week": 2,
+	"dialog": {
+	  "Iqbal": [
+		"Eh daripada langsung pulang gak ngapa-ngapain, gimana kalo ikut aku kerja sambilan, mumpung lagi nyari satu orang buat direkrut."
+	  ]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Boleh juga tuh. Dimana?",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 12 }
+	  },
+	  {
+		"id": 2,
+		"text": "Oke. Gas!",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 12 }
+	  }
+	]
+  },
+
+  "scene15Opt2": {
+	"id": 15,
+	"week": 2,
+	"dialog": {
+	  "Narator": ["Kamu menyantap makanan yang telah dihidangkan."],
+	  "Iqbal": [
+		"Eh btw ada yang mau ikut kerja sambilan. Tempat kerjaku lagi buka lowongan.",
+		"Iya.",
+		"Kamu gimana, *PlayerName*?"
+	  ],
+	  "Arif": [
+		"Yang Rumah Melon itu ya?",
+		"Aku juga, tau sendiri kegiatanku ngapain."
+	  ],
+	  "Akhdan": ["Aku gak bisa ikut."]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Boleh tuh, aku mau ikut!",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 12 }
+	  },
+	  {
+		"id": 2,
+		"text": "Oke! Habis ini langsung berangkat",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 12 }
+	  }
+	]
+  },
+
+  "scene15Opt3": {
+	"id": 15,
+	"week": 2,
+	"dialog": {
+	  "Narator": [
+		"Kamu mendatangi gedung utama dan mendaftar.",
+		"Kamu berhasil menjadi anggota panitia untuk pentas seni yang di adakan di fakultasmu"
+	  ],
+	  "PopUp": ["Selamat Kamu Menjadi Anggota Panitia Pensi!"]
+	}
+  },
+
+  "sceneSpecial2": {
+	"id": 15,
+	"week": 2,
+	"dialog": {
+	  "Narator": [
+		"Sesaat setelah kamu keluar dari ruangan pertemuan di gedung utama, terdengar suara seorang wanita yang memanggil namamu dari samping.",
+		"Setelah berbincang sebentar dengan Kak Fitri akhirnya Kak Fitri pamit karna masih ada yang perlu ia kerjakan di hima."
+	  ],
+	  "Player": [
+		"Ah kakak yang waktu itu ya. Ehehe sama-sama kak kebetulan aja saya juga mau mampir beli minum waktu itu, nama saya *PlayerName*",
+		"Ya kak salken juga."
+	  ],
+	  "Heroine": [
+		"Eh kamu yang kemarin udah ngebantuin aku makasih banget ya hampir aja aku kecopetan. Kenalin aku Fitri.",
+		"Kalo gitu aku pamit dan salam kenal ya *PlayerName*."
+	  ]
+	}
+  },
+
+  "scene16Opt1And2": {
+	"id": 16,
+	"week": 2,
+	"dialog": {
+	  "Narator": [
+		"Kamu dan pemilik toko berbincang mengenai pekerjaan, jadwal dan bayaran yang akan kamu terima.",
+		"Kamu menyetujuinya dan menjadi pegawai paruh waktu di toko tersebut.",
+		"Setelah itu kamu langsung pulang."
+	  ],
+	  "Player": ["*Memperkenalkan diri*"],
+	  "Iqbal": [
+		"Pak ini ada temen yang mau kerja sambilan juga disini, lowongannya masih buka kan?"
+	  ],
+	  "PemilikToko": [
+		"Oh iya masih nak Iqbal. Mana temennya yang mau ngelamar?"
+	  ]
+	}
+  },
+
+  "scene17": {
+	"id": 17,
+	"week": 2,
+	"dialog": {
+	  "Narator": [
+		"Ketika terbangun, kamu mendapati hari sudah malam. Apa yang kan kamu lakukan?"
+	  ],
+	  "Player": ["Hahh... Capeknya langsung tidur ajalah."]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Lanjut tidur",
+		"stats": { "affection": 0, "social": 0, "academic": -2, "economy": 0 }
+	  },
+	  {
+		"id": 2,
+		"text": "Belajar dulu sebentar",
+		"stats": { "affection": 0, "social": 0, "academic": 3, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene18Opt1": {
+	"id": 18,
+	"week": 2,
+	"dialog": {
+	  "Player": ["Hari minggu yang indah, hari yang cocok buat..."]
+	},
+	"options": [
+	  {
+		"id": 1,
+		"text": "Jalan pagi",
+		"stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
+	  },
+	  {
+		"id": 2,
+		"text": "Main game seharian",
+		"stats": { "affection": 0, "social": 10, "academic": -3, "economy": 0 }
+	  },
+	  {
+		"id": 3,
+		"text": "Ngoding",
+		"stats": { "affection": 0, "social": -5, "academic": 10, "economy": 0 }
+	  }
+	]
+  },
+
+  "scene18Opt2": {
+	"id": 18,
+	"week": 3,
+	"dialog": {
+	  "Narator": ["Kamu menonton video tutorial ngoding sampai jam 2 malam."]
+	}
+  },
+
+  "scene19Opt1": {
+	"id": 19,
+	"week": 3,
+	"dialog": {
+	  "Narator": [
+		"Setelah merasa cukup olahraga pagi, kamu memutuskan untuk membeli minuman di Indoapril.",
+		"Setelah masuk ke dalam toko, kamu melihat sosok yang tidak asing."
+	  ]
+	}
+  },
+
+  "scene19Opt2": {
+	"id": 19,
+	"week": 3,
+	"dialog": {
+	  "Narator": [
+		"Kamu ke ruang tengah yang ada di kos lalu bertemu dengan Iqbal dan Akhdan.",
+		"Kamu duduk bersama mereka dan menghabiskan waktu bersama."
+	  ],
+	  "Player": ["Pagi Bal, Dan!", "Iqbal mabar kuy!"],
+	  "Iqbal": [
+		"Pagi *PlayerName* (sambil bermain Heroes Legends).",
+		"Ayo aja gua mah, ini juga lagi main. Login lah!"
+	  ],
+	  "Akhdan": ["Pagi *PlayerName* (sambil bermain gitar)."]
+	}
+  },
+
+  "scene19Opt3": {
+	"id": 19,
+	"week": 3,
+	"dialog": {
+	  "Narator": [
+		"Kamu kembali kekamarmu dan belajar ngoding dengan menonton Youtube."
+	  ]
+	}
+  },
+
+  "scene20Alt1": {
+	"id": 20,
+	"week": 3,
+	"dialog": {
+	  "Narator": [
+		"Setelah itu kak Sasa pergi, dan kamupun juga berjalan pulang ke kos."
+	  ],
+	  "Heroine": [
+		"Oh... Kamu yang waktu itu di gazebo ya? Abis lari pagi?",
+		"*Tersenyum* Rajin yaa...",
+		"Oiya kita belum kenalan kan? Nama kakak Fitri. Mohon kerja samanya saat pentas seni fakultas nanti ya! *tersenyum*"
+	  ],
+	  "Player": [
+		"Kakak kan yang waktu itu yang open rekrutmen panitia pensi ya?",
+		"Hehe... iya kak.",
+		"Duh! Senyumnya!",
+		"Aku *PlayerName*. Ya kak saya juga mohon bantuan nya."
+	  ]
+	}
+  },
+
+  "scene20Alt2": {
+	"id": 20,
+	"week": 3,
+	"dialog": {
+	  "Narator": [
+		"Setelah itu Kak Fitri meninggalkan Indoapril, kamupun juga segera membayar minumanmu dan langsung pulang."
+	  ],
+	  "Heroine": [
+		"Eh *PlayerName* sehat, kamu habis merathon ya?",
+		"Wih rajin ya kamu! *Tersenyum*."
+	  ],
+	  "Player": [
+		"Eh Kak Fitri? Apa kabar kak?",
+		"Hehe iya kak, lumayan kan untuk meningkatkan kebugaran tubuh!",
+		"Aduh.. Ya Tuhan! Damage Senyumnya pedes banget!"
+	  ]
+	}
+  },
+
+  "scene20Alt3": {
+	"id": 20,
+	"week": 3,
+	"dialog": {
+	  "Narator": [
+		"Kamu mendapat motifikasi pesan yang mana kamu dimasukan ke grup kepanitiaan pentas seni fakultas.",
+		"Seorang kakak tingkat bernama Kak Fitri memperkenalkan diri.",
+		"Ia juga menjelaskan perihal pentas seni yang akan diadakan fakultas."
+	  ]
+	}
+  },
+
+  "scene20Alt4": {
+	"id": 20,
+	"week": 3,
+	"dialog": {
+	  "Narator": [
+		"Setelah itu Kak Fitri meninggalkan Indoapril, kamupun juga segera membayar minumanmu dan langsung pulang."
+	  ],
+	  "Heroine": [
+		"Pagi *PlayerName* abis maraton ya?",
+		"Rajinnya... Btw gimana kegiatan di kepanitiaan?",
+		"Gitu ya... *Tersenyum* Semangat yaa!"
+	  ],
+	  "Player": [
+		"Kak Fitri disini juga?",
+		"Iya kak, olahraga...",
+		"Belum ada yang spesial sih kak, tapi temenku jadi tambah banyak.",
+		"'Duh senyumnya nembus jantung' Siap kak!"
+	  ]
+	}
+  },
+
+  "scene21": {
+	"id": 21,
+	"week": 3,
+	"dialog": {
+	  "PopUp": [
+		"Selamat! Kamu sudah membuka parameter Cinta. Jangan terlallu bucin ataupun cuek ya. Berusahalah memenangkan hati si dia!"
+	  ]
+	}
+  }
+}
