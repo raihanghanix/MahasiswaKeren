@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://3u3f6ax8v34q"]
 
 [ext_resource type="Script" path="res://Scripts/NameSelect.cs" id="1_ts2b4"]
-[ext_resource type="Texture2D" uid="uid://4tck0k2t64qk" path="res://Sprites/Background/1684748592838.jpg" id="2_2vjtf"]
+[ext_resource type="Texture2D" uid="uid://baqy2j3gv3k3o" path="res://Assets/Backgrounds/Ruang kuliah.jpg" id="2_hybak"]
 [ext_resource type="FontFile" uid="uid://dxtofwvuov7a8" path="res://Fonts/Margarine.ttf" id="3_53ar5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ajnr"]
@@ -19,7 +19,7 @@ script = ExtResource("1_ts2b4")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.470588, 0.470588, 0.470588, 1)
 position = Vector2(848, 112)
-texture = ExtResource("2_2vjtf")
+texture = ExtResource("2_hybak")
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]

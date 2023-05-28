@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="2_1w5ll"]
 [ext_resource type="Script" path="res://Scripts/ParallaxBackground.cs" id="2_r3cl2"]
 [ext_resource type="FontFile" uid="uid://dxtofwvuov7a8" path="res://Fonts/Margarine.ttf" id="3_b4edg"]
-[ext_resource type="Texture2D" uid="uid://defxdduaotgfa" path="res://Sprites/Character/699424.jpg" id="5_bo8wl"]
+[ext_resource type="Texture2D" uid="uid://43b6yo4jxt2x" path="res://Assets/Backgrounds/Halaman Pembuka.jpg" id="5_yu0kd"]
 
 [node name="StartScreen" type="Node2D"]
 script = ExtResource("1_18m56")
@@ -58,7 +58,7 @@ metadata/_edit_lock_ = true
 modulate = Color(0.627451, 0.627451, 0.627451, 1)
 position = Vector2(640, 360.5)
 scale = Vector2(0.3125, 0.312337)
-texture = ExtResource("5_bo8wl")
+texture = ExtResource("5_yu0kd")
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

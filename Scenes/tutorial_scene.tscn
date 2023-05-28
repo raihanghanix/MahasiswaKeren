@@ -1,8 +1,309 @@
-[gd_scene format=3 uid="uid://c3foep8b4t7cd"]
+[gd_scene load_steps=14 format=3 uid="uid://c3foep8b4t7cd"]
+
+[ext_resource type="Texture2D" uid="uid://c7gllydm2lln8" path="res://Assets/Backgrounds/Kamar rumah.jpg" id="1_ianr6"]
+[ext_resource type="Script" path="res://Scripts/TutorialScene.cs" id="1_ii6s1"]
+[ext_resource type="Texture2D" uid="uid://bch2m85iu6mwi" path="res://Assets/Icons/Akademik.png" id="2_pjmqg"]
+[ext_resource type="Texture2D" uid="uid://cq1edt5tl2ch5" path="res://Assets/Icons/Sosial.png" id="3_vl4n1"]
+[ext_resource type="Texture2D" uid="uid://bikdd38bi1i17" path="res://Assets/Icons/Keuangan.png" id="4_em2op"]
+[ext_resource type="Texture2D" uid="uid://cpqp1loertqyu" path="res://Assets/Icons/Hati.png" id="5_gb88y"]
+[ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="7_pds7r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncpg8"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.27451, 0.27451, 0.27451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vs2nw"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aouib"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbmyh"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlx65"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5h2d"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="TutorialScene" type="Node2D"]
+script = ExtResource("1_ii6s1")
 
 [node name="Label" type="Label" parent="."]
+offset_top = -32.0
 offset_right = 128.0
-offset_bottom = 64.0
+offset_bottom = -6.0
 text = "TUTORIAL"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+position = Vector2(639.5, 358.5)
+scale = Vector2(0.768908, 0.761053)
+texture = ExtResource("1_ianr6")
+metadata/_edit_lock_ = true
+
+[node name="Parameters" type="Panel" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 128.0
+metadata/_edit_lock_ = true
+
+[node name="Akademik" type="Sprite2D" parent="Parameters"]
+position = Vector2(96, 32)
+texture = ExtResource("2_pjmqg")
+
+[node name="Sosial" type="Sprite2D" parent="Parameters"]
+position = Vector2(224, 32)
+texture = ExtResource("3_vl4n1")
+
+[node name="Keuangan" type="Sprite2D" parent="Parameters"]
+position = Vector2(352, 32)
+texture = ExtResource("4_em2op")
+
+[node name="Hati" type="Sprite2D" parent="Parameters"]
+position = Vector2(480, 32)
+texture = ExtResource("5_gb88y")
+
+[node name="Button" type="Button" parent="Parameters"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_default_cursor_shape = 2
+text = "||"
+
+[node name="AkademikLabel" type="Label" parent="Parameters"]
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SosialLabel" type="Label" parent="Parameters"]
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeuanganLabel" type="Label" parent="Parameters"]
+offset_left = 384.0
+offset_right = 448.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HatiLabel" type="Label" parent="Parameters"]
+offset_left = 512.0
+offset_right = 576.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogBox" type="Panel" parent="."]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+offset_left = 64.0
+offset_top = 512.0
+offset_right = 1216.0
+offset_bottom = 656.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ncpg8")
+metadata/_edit_lock_ = true
+
+[node name="DialogBoxLabel" type="Label" parent="DialogBox"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 56.0
+offset_right = 1088.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "\"Apa yang sebaiknya ku lakukan sekarang?\""
+autowrap_mode = 1
+
+[node name="CharaName" type="Panel" parent="."]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+offset_left = 128.0
+offset_top = 488.0
+offset_right = 384.0
+offset_bottom = 552.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ncpg8")
+metadata/_edit_lock_ = true
+
+[node name="CharaNameLabel" type="Label" parent="CharaName"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 248.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Player Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 1216.0
+offset_bottom = 448.0
+metadata/_edit_lock_ = true
+
+[node name="Opt1Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 576.0
+offset_right = 832.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vs2nw")
+metadata/_edit_group_ = true
+
+[node name="OptButton" type="Button" parent="Control/Opt1Panel"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 96.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+text = "\"Lanjut ngoding dulu gak siih\""
+flat = true
+
+[node name="Opt1Panel2" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 160.0
+offset_right = 832.0
+offset_bottom = 256.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aouib")
+metadata/_edit_group_ = true
+
+[node name="OptButton" type="Button" parent="Control/Opt1Panel2"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 96.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+text = "\"Berbicara dengan orang tua\""
+flat = true
+
+[node name="Opt1Panel3" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 896.0
+offset_right = 1152.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hbmyh")
+metadata/_edit_group_ = true
+
+[node name="OptButton" type="Button" parent="Control/Opt1Panel3"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 96.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+text = "\"Mengecek kembali barang dan persediaan\""
+flat = true
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="Opt1Panel4" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 160.0
+offset_right = 1152.0
+offset_bottom = 256.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wlx65")
+metadata/_edit_group_ = true
+
+[node name="OptButton" type="Button" parent="Control/Opt1Panel4"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 96.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+text = "\"Menelpon teman\""
+flat = true
+
+[node name="TutorialBox" type="Panel" parent="."]
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 576.0
+offset_bottom = 448.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t5h2d")
+metadata/_edit_lock_ = true
+
+[node name="SkipButton" type="Button" parent="TutorialBox"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 192.0
+offset_bottom = 232.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lewati"
+
+[node name="NextButton" type="Button" parent="TutorialBox"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 192.0
+offset_right = 448.0
+offset_bottom = 232.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lanjutkan"
+
+[node name="Label" type="Label" parent="TutorialBox"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 448.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Lorem Ipsum"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="TutorialBox"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 141.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_pds7r")
+text = "TUTORIAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = "Konfirmasi"
+position = Vector2i(320, 200)
+size = Vector2i(640, 360)
+ok_button_text = "Ya"
+dialog_text = "Apa kamu yakin ingin melewati tutorial?"
+cancel_button_text = "Tidak"
+
+[connection signal="pressed" from="TutorialBox/SkipButton" to="." method="OnSkipButtonPressed"]
+[connection signal="pressed" from="TutorialBox/NextButton" to="." method="OnNextButtonPressed"]
+[connection signal="canceled" from="ConfirmationDialog" to="." method="OnConfirmationDialogCanceled"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="OnConfirmationDialogConfirmed"]

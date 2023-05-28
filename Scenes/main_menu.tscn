@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bg57ktbx4iror"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_q2s6e"]
-[ext_resource type="Texture2D" uid="uid://r5gopohpg3hj" path="res://Sprites/Background/1684749199223.jpg" id="2_iosrf"]
+[ext_resource type="Texture2D" uid="uid://dpsvnf8ewpftp" path="res://Assets/Backgrounds/Lorong fakultas.jpg" id="2_tabk2"]
 [ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="3_nwq8u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25tdi"]
@@ -22,7 +22,7 @@ script = ExtResource("1_q2s6e")
 modulate = Color(0.784314, 0.784314, 0.784314, 1)
 position = Vector2(642, 360.5)
 scale = Vector2(0.772727, 0.613523)
-texture = ExtResource("2_iosrf")
+texture = ExtResource("2_tabk2")
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="."]
