@@ -4,7 +4,7 @@
 	"week": 0,
 	"dialog": {
 	  "Narator": [
-		"Nama kamu adalah *PlayerName*, kamu adalah mahasiswa sistem informasi semester 5, dan saat ini kamu sedang bersiap siap kembali ke kosan kamu setelah liburan yang tenang dan menyenangkan."
+		"Nama kamu adalah *PlayerName*, kamu adalah mahasiswa sistem informasi semester 5, dan saat ini kamu sedang bersiap siap kembali ke kosan setelah liburan yang tenang dan menyenangkan."
 	  ],
 	  "Player": ["Apa yang sebaiknya ku lakukan sekarang?"]
 	},
