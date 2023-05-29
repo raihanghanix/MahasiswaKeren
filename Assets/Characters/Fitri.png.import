@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jtksctc4ehvw"
-path="res://.godot/imported/1684393695313.jpg-a86efa85c558eba052b639c947cc33d1.ctex"
+uid="uid://cg4slt507vfkj"
+path="res://.godot/imported/Fitri.png-1a02d95a5eebdd1b65d0e8faf02ef996.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Background/1684393695313.jpg"
-dest_files=["res://.godot/imported/1684393695313.jpg-a86efa85c558eba052b639c947cc33d1.ctex"]
+source_file="res://Assets/Characters/Fitri.png"
+dest_files=["res://.godot/imported/Fitri.png-1a02d95a5eebdd1b65d0e8faf02ef996.ctex"]
 
 [params]
 

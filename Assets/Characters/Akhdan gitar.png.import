@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0672fr2w75ud"
-path="res://.godot/imported/1684814490564.jpg-c37108cf558538334150b84898efd4a4.ctex"
+uid="uid://b13anc62tl1ha"
+path="res://.godot/imported/Akhdan gitar.png-81e93081aa8478ddbe831d22a26f73bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Background/1684814490564.jpg"
-dest_files=["res://.godot/imported/1684814490564.jpg-c37108cf558538334150b84898efd4a4.ctex"]
+source_file="res://Assets/Characters/Akhdan gitar.png"
+dest_files=["res://.godot/imported/Akhdan gitar.png-81e93081aa8478ddbe831d22a26f73bb.ctex"]
 
 [params]
 

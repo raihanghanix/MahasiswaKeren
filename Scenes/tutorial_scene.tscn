@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3foep8b4t7cd"]
+[gd_scene load_steps=17 format=3 uid="uid://c3foep8b4t7cd"]
 
 [ext_resource type="Texture2D" uid="uid://c7gllydm2lln8" path="res://Assets/Backgrounds/Kamar rumah.jpg" id="1_ianr6"]
 [ext_resource type="Script" path="res://Scripts/TutorialScene.cs" id="1_ii6s1"]
@@ -35,7 +35,45 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5h2d"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="Animation" id="Animation_2vtpt"]
+resource_name = "SceneTransition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rtnie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4lgd5"]
+_data = {
+"RESET": SubResource("Animation_rtnie"),
+"SceneTransition": SubResource("Animation_2vtpt")
+}
+
 [node name="TutorialScene" type="Node2D"]
+modulate = Color(0, 0, 0, 1)
 script = ExtResource("1_ii6s1")
 
 [node name="Label" type="Label" parent="."]
@@ -82,6 +120,7 @@ mouse_default_cursor_shape = 2
 text = "||"
 
 [node name="AkademikLabel" type="Label" parent="Parameters"]
+layout_mode = 0
 offset_left = 128.0
 offset_right = 192.0
 offset_bottom = 64.0
@@ -91,6 +130,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SosialLabel" type="Label" parent="Parameters"]
+layout_mode = 0
 offset_left = 256.0
 offset_right = 320.0
 offset_bottom = 64.0
@@ -100,6 +140,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="KeuanganLabel" type="Label" parent="Parameters"]
+layout_mode = 0
 offset_left = 384.0
 offset_right = 448.0
 offset_bottom = 64.0
@@ -109,6 +150,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HatiLabel" type="Label" parent="Parameters"]
+layout_mode = 0
 offset_left = 512.0
 offset_right = 576.0
 offset_bottom = 64.0
@@ -302,6 +344,12 @@ size = Vector2i(640, 360)
 ok_button_text = "Ya"
 dialog_text = "Apa kamu yakin ingin melewati tutorial?"
 cancel_button_text = "Tidak"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "SceneTransition"
+libraries = {
+"": SubResource("AnimationLibrary_4lgd5")
+}
 
 [connection signal="pressed" from="TutorialBox/SkipButton" to="." method="OnSkipButtonPressed"]
 [connection signal="pressed" from="TutorialBox/NextButton" to="." method="OnNextButtonPressed"]

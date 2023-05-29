@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo1c8fh6cc6iv"]
+[gd_scene load_steps=9 format=3 uid="uid://bo1c8fh6cc6iv"]
 
 [ext_resource type="Script" path="res://Scripts/StartScreen.cs" id="1_18m56"]
 [ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="2_1w5ll"]
@@ -6,7 +6,69 @@
 [ext_resource type="FontFile" uid="uid://dxtofwvuov7a8" path="res://Fonts/Margarine.ttf" id="3_b4edg"]
 [ext_resource type="Texture2D" uid="uid://43b6yo4jxt2x" path="res://Assets/Backgrounds/Halaman Pembuka.jpg" id="5_yu0kd"]
 
+[sub_resource type="Animation" id="Animation_ns02c"]
+resource_name = "SceneTransition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.627451, 0.627451, 0.627451, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cqg11"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b0uig"]
+_data = {
+"RESET": SubResource("Animation_cqg11"),
+"SceneTransition": SubResource("Animation_ns02c")
+}
+
 [node name="StartScreen" type="Node2D"]
+modulate = Color(0, 0, 0, 1)
 script = ExtResource("1_18m56")
 metadata/_edit_lock_ = true
 
@@ -55,10 +117,16 @@ motion_mirroring = Vector2(1280, 0)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color(0.627451, 0.627451, 0.627451, 1)
+modulate = Color(0, 0, 0, 1)
 position = Vector2(640, 360.5)
 scale = Vector2(0.3125, 0.312337)
 texture = ExtResource("5_yu0kd")
 metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "SceneTransition"
+libraries = {
+"": SubResource("AnimationLibrary_b0uig")
+}
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

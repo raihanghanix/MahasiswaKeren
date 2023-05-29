@@ -1,8 +1,52 @@
-[gd_scene format=3 uid="uid://bqbeltu40hr32"]
+[gd_scene load_steps=4 format=3 uid="uid://bqbeltu40hr32"]
+
+[sub_resource type="Animation" id="Animation_6cxji"]
+resource_name = "SceneTransition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rgqci"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ws58m"]
+_data = {
+"RESET": SubResource("Animation_rgqci"),
+"SceneTransition": SubResource("Animation_6cxji")
+}
 
 [node name="Scene1" type="Node2D"]
+modulate = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
 offset_right = 128.0
 offset_bottom = 64.0
 text = "SCENE 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "SceneTransition"
+libraries = {
+"": SubResource("AnimationLibrary_ws58m")
+}
