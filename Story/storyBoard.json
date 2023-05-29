@@ -150,7 +150,7 @@
     "week": 0,
     "dialog": {
       "Narator": [
-        "Kamu tidur dikamar mu, dengan suasana yang tenang dikosan mu kualitas tidur mu meningkat dan membuatmu tertidur hingga Sore dengan sangat nyeyak yang membuat mu tidur seperti orang yang sedang koma."
+        "Kamu tidur dikamar mu, dengan suasana yang tenang dikosan mu kualitas tidur mu meningkat dan membuatmu tertidur hingga Sore dengan sangat nyeyak yang membuatmu tidur seperti orang yang sedang koma."
       ]
     }
   },
@@ -161,10 +161,15 @@
     "dialog": {
       "Narator": [
         "Kamu berada di kamarmu dan merapikan barang barang yang ada didalam kamarmu.",
-        "Diantara barang barang yang kamu rapikan kamu menemukan sebuah foto yang berisikan Kamu dan teman teman mu yang sedang berkumpul bersama dan bersenang senang bersama.",
-        "Kamu melanjutkan merapikan barang di kamar mu."
+        "Diantara barang-barang yang kamu rapikan kamu menemukan sebuah foto yang berisikan Kamu dan teman-teman mu yang sedang berkumpul bersama dan bersenang senang bersama.",
+        "Kamu melanjutkan merapikan barang di kamar mu.",
+        "Kamu mengingat kenangan sewaktu kamu berkumpul bersama 6 temanmu yang lain",
+        "Arif Yang Berisik Tapi memiliki sosok yang dapat memimpin team dengan baik,Iqbal yang periang dan pintar,Akhdan yang ambisius dan perfeksionis",
+        "Ghani Ramah dan sesalu dapat diandalkan, Sabrian yang Misterius namun mudah tertipu, Aleph yang imajinatif dan kreatif"
       ],
-      "Player": ["Foto ini masih ada ternyata, ada ada saja ya waktu itu..."]
+      "Player": ["Foto ini masih ada ternyata, ada ada saja ya waktu itu...",
+        "Ngak kerasa ya sudah semester 5........"
+    ]
     }
   },
 
