@@ -87,10 +87,10 @@
         "Kamu berkumpul dengan teman kos.",
         "Iqbal membuka bungkus jajanan.",
         "Kalian memakan jajanan bersama dan mengobrol sampai tengah hari.",
-        "Kamu Kembali ke kamar mu dan melanjukan merapikan barang barang dikosan mu."
+        "Kamu Kembali ke kamar mu dan melanjukan merapikan barang-barang dikamar kosan mu."
       ],
       "Iqbal": ["Wedeh baru nyampe nih!", "Makan nih jajanan!"],
-      "Akhdan": ["Aku juga baru nyampe sih kemaren."]
+      "Akhdan": ["Siapa sangka!,Aku juga baru nyampe sih kemarin."]
     }
   },
 
@@ -127,7 +127,7 @@
     "week": 0,
     "dialog": {
       "Narator": [
-        "Kamu berkeliling kota dengan menggunakan motormu dan mendapatkan mood yang baik selama berjalan jalan.",
+        "Kamu berkeliling kota dengan menggunakan Supra pemberian Bapak dan mendapatkan mood yang baik selama berjalan jalan.",
         "Apa yang akan kamu lakukan sekarang?"
       ]
     },
@@ -139,7 +139,7 @@
       },
       {
         "id": 2,
-        "text": "Mampir ke toko untuk membeli jajan dan dibawa pulang",
+        "text": "Mampir ke toko untuk membeli cemilan dan dibawa pulang",
         "stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
       }
     ]
