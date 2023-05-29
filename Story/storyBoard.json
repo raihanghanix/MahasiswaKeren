@@ -178,7 +178,7 @@
     "week": 0,
     "dialog": {
       "Narator": [
-        "Kamu berkeliling Kota dengan menggunakan motor Supra kesayangan mu.",
+        "Kamu berkeliling Kota dengan menggunakan motor Supra kesayanganmu.",
         "Dikarenakan suasana yang panas disiang hari kamu memutuskan untuk mampir ke toko untuk membeli minuman."
       ]
     }
@@ -190,7 +190,7 @@
     "dialog": {
       "Narator": [
         "Setelah berkendara Sebentar kamu menemukan toko yang bernama Toko Manusia Taat dan memutuskan untuk mampir.",
-        "Setelah kamu turun dari motor Supra legend mu, tiba tiba terdengar suara teriakan di dekat mu.",
+        "Setelah kamu turun dari motor Supra legend mu, tiba-tiba terdengar suara teriakan di dekat mu.",
         "Kamu melihat ke arah teriakan tersebut dan dengan sigap mengetahui itu merupakan sebuah tindakan pencopetan.",
         "Dengan sigap kamu menyandung pencopet yang lari ke arahmu dan memberi kuncian maut dari gerakan silat yang kamu pelajari.",
         "Pencopet itu melepas tas yang ia copet lalu kamu mengambil tas tersebut dan dengan bantuan warga sekitar pencopet tersebut ditangkap dan dibawa ke pihak berwajib."
@@ -210,7 +210,9 @@
         "Wajah putih mulus nan seperti bidadari walau hanya sekilah hati mu berdegub dikarenakan kecantikan dari wanita tersebut.",
         "Wanita tersebut pergi dari tempat itu dan meninggalkanmu sebuah kartu nama yang berisikan nama dan kontaknya."
       ],
-      "Player": ["Gak apa-apa kan kak?"],
+      "Player": ["Gak apa-apa kan kak?",
+        "(Cantiknya.....)"
+    ],
       "Heroine": [
         "Ah iya... makasih ya udah ngebantuin aku, terimakasih banget, maaf aku lagi buru-buru, ini kartu nama aku makasih ya!"
       ]
@@ -436,8 +438,8 @@
       "Sabrian": ["Gampang banget kegoda kamu bang."],
       "Ghani": ["Wkwkwk."],
       "Iqbal": ["Dia seperti terkena genjutsu sales oddo."],
-      "Akhdan": ["Aku mencium bau-bau konspirasi."],
-      "Arif": ["Tul tuh, tumben banget ni orang mau ikut organisasi."]
+      "Akhdan": ["hm..., Aku mencium bau-bau konspirasi."],
+      "Arif": ["Siapa sangka!, tumben banget ni orang mau ikut organisasi."]
     }
   },
 
@@ -531,7 +533,7 @@
       },
       {
         "id": 2,
-        "text": "Oke. Gas!",
+        "text": "Pakai nanya",
         "stats": { "affection": 0, "social": 0, "academic": 0, "economy": 12 }
       }
     ]
