@@ -1,4 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqbeltu40hr32"]
+[gd_scene load_steps=9 format=3 uid="uid://bqbeltu40hr32"]
+
+[ext_resource type="Script" path="res://Scripts/Scene1.cs" id="1_k01cr"]
+[ext_resource type="Texture2D" uid="uid://c7gllydm2lln8" path="res://Assets/Backgrounds/Kamar rumah.jpg" id="2_40be5"]
+[ext_resource type="PackedScene" uid="uid://cp5gb17vl7e8u" path="res://Scenes/paramater.tscn" id="3_0irm8"]
+[ext_resource type="PackedScene" uid="uid://b5y3ad71dueuv" path="res://Scenes/dialog.tscn" id="4_nlhtm"]
+
+[sub_resource type="Animation" id="Animation_rgqci"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_6cxji"]
 resource_name = "SceneTransition"
@@ -16,37 +36,153 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_rgqci"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ws58m"]
 _data = {
 "RESET": SubResource("Animation_rgqci"),
 "SceneTransition": SubResource("Animation_6cxji")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcjvm"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="Scene1" type="Node2D"]
 modulate = Color(0, 0, 0, 1)
+script = ExtResource("1_k01cr")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 128.0
-offset_bottom = 64.0
-text = "SCENE 1"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(639.5, 358.5)
+scale = Vector2(0.768908, 0.761053)
+texture = ExtResource("2_40be5")
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "SceneTransition"
 libraries = {
 "": SubResource("AnimationLibrary_ws58m")
 }
+
+[node name="ParamaterNode" parent="." instance=ExtResource("3_0irm8")]
+metadata/_edit_lock_ = true
+
+[node name="DialogNode" parent="." instance=ExtResource("4_nlhtm")]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1152.0
+offset_top = 520.0
+offset_right = 1211.0
+offset_bottom = 648.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+text = "Next"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(640, 360)
+
+[node name="OptionsControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 320.0
+offset_top = 192.0
+offset_right = 960.0
+offset_bottom = 416.0
+metadata/_edit_lock_ = true
+
+[node name="Opt1Panel" type="Panel" parent="OptionsControl"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qcjvm")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="OptButton" type="Button" parent="OptionsControl/Opt1Panel"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 96.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+text = "\"Lanjut ngoding dulu gak siih\""
+flat = true
+text_overrun_behavior = 4
+clip_text = true
+
+[node name="Opt1Panel2" type="Panel" parent="OptionsControl"]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 256.0
+offset_bottom = 224.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qcjvm")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="OptButton" type="Button" parent="OptionsControl/Opt1Panel2"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 96.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+text = "\"Berbicara dengan orang tua\""
+flat = true
+text_overrun_behavior = 4
+clip_text = true
+
+[node name="Opt1Panel3" type="Panel" parent="OptionsControl"]
+layout_mode = 0
+offset_left = 384.0
+offset_right = 640.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qcjvm")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="OptButton" type="Button" parent="OptionsControl/Opt1Panel3"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 96.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+text = "\"Mengecek kembali barang dan persediaan barang\""
+flat = true
+text_overrun_behavior = 4
+clip_text = true
+
+[node name="Opt1Panel4" type="Panel" parent="OptionsControl"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 640.0
+offset_bottom = 224.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qcjvm")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="OptButton" type="Button" parent="OptionsControl/Opt1Panel4"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 96.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+text = "\"Menelpon teman\""
+flat = true
+text_overrun_behavior = 4
+clip_text = true
+
+[connection signal="pressed" from="Button" to="." method="OnButtonPressed"]

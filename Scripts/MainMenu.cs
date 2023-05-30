@@ -18,7 +18,8 @@ public partial class MainMenu : Node2D
         }
         else
         {
-            playerNameLabel.Text = "Nama kosong!";
+            playerName = "John Doe";
+            playerNameLabel.Text = playerName;
         }
 	}
 

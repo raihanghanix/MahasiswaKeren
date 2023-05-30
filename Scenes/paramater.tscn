@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp5gb17vl7e8u"]
+
+[ext_resource type="Texture2D" uid="uid://bch2m85iu6mwi" path="res://Assets/Icons/Akademik.png" id="1_y1mnk"]
+[ext_resource type="Texture2D" uid="uid://cq1edt5tl2ch5" path="res://Assets/Icons/Sosial.png" id="2_2mrn8"]
+[ext_resource type="Texture2D" uid="uid://bikdd38bi1i17" path="res://Assets/Icons/Keuangan.png" id="3_wrj55"]
+[ext_resource type="Texture2D" uid="uid://cpqp1loertqyu" path="res://Assets/Icons/Hati.png" id="4_3oe5d"]
+
+[node name="ParamaterNode" type="Node2D"]
+
+[node name="Parameters" type="Panel" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 128.0
+metadata/_edit_lock_ = true
+
+[node name="Akademik" type="Sprite2D" parent="Parameters"]
+position = Vector2(96, 32)
+texture = ExtResource("1_y1mnk")
+
+[node name="Sosial" type="Sprite2D" parent="Parameters"]
+position = Vector2(224, 32)
+texture = ExtResource("2_2mrn8")
+
+[node name="Keuangan" type="Sprite2D" parent="Parameters"]
+position = Vector2(352, 32)
+texture = ExtResource("3_wrj55")
+
+[node name="Hati" type="Sprite2D" parent="Parameters"]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+position = Vector2(480, 32)
+texture = ExtResource("4_3oe5d")
+
+[node name="Button" type="Button" parent="Parameters"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_default_cursor_shape = 2
+text = "||"
+
+[node name="AkademikLabel" type="Label" parent="Parameters"]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SosialLabel" type="Label" parent="Parameters"]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeuanganLabel" type="Label" parent="Parameters"]
+layout_mode = 0
+offset_left = 384.0
+offset_right = 448.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HatiLabel" type="Label" parent="Parameters"]
+layout_mode = 0
+offset_left = 512.0
+offset_right = 576.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "??"
+horizontal_alignment = 1
+vertical_alignment = 1
