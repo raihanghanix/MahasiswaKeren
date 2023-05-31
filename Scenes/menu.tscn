@@ -1,0 +1,137 @@
+[gd_scene load_steps=8 format=3 uid="uid://csawjaiqkfk7o"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.cs" id="1_047a5"]
+[ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="1_xw71l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5xkg"]
+bg_color = Color(0.109804, 0.105882, 0.105882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qthri"]
+bg_color = Color(0.85098, 0.85098, 0.85098, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5awlu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ccqq8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rty3e"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_047a5")
+
+[node name="MenuBG" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q5xkg")
+metadata/_edit_lock_ = true
+
+[node name="MenuTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 480.0
+offset_bottom = 352.0
+theme_override_colors/font_outline_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_constants/outline_size = 24
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = ExtResource("1_xw71l")
+theme_override_font_sizes/font_size = 48
+text = "MAHASISWA 
+KEREN"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_lock_ = true
+
+[node name="PlayBtnBG" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 352.0
+offset_right = 416.0
+offset_bottom = 416.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qthri")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="PlayButton" type="Button" parent="PlayBtnBG"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 64.0
+tooltip_text = "Mulai bermain!"
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5awlu")
+text = "Mulai"
+flat = true
+
+[node name="TutorialBtnBG" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 432.0
+offset_right = 416.0
+offset_bottom = 496.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qthri")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TutorialButton" type="Button" parent="TutorialBtnBG"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 64.0
+tooltip_text = "Mulai tutorial."
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ccqq8")
+text = "Tutorial"
+flat = true
+
+[node name="ExitBtnBG" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 512.0
+offset_right = 416.0
+offset_bottom = 576.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qthri")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="ExitButton" type="Button" parent="ExitBtnBG"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 64.0
+tooltip_text = "Keluar game."
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rty3e")
+text = "Keluar"
+flat = true
+
+[connection signal="pressed" from="PlayBtnBG/PlayButton" to="." method="OnPlayButtonPressed"]
+[connection signal="pressed" from="TutorialBtnBG/TutorialButton" to="." method="OnTutorialButtonPressed"]
+[connection signal="pressed" from="ExitBtnBG/ExitButton" to="." method="OnExitButtonPressed"]

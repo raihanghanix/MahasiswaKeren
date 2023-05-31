@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://3u3f6ax8v34q"]
+[gd_scene load_steps=10 format=3 uid="uid://3u3f6ax8v34q"]
 
 [ext_resource type="Script" path="res://Scripts/NameSelect.cs" id="1_ts2b4"]
 [ext_resource type="Texture2D" uid="uid://baqy2j3gv3k3o" path="res://Assets/Backgrounds/Ruang kuliah.jpg" id="2_hybak"]
@@ -10,6 +10,8 @@ corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d1651"]
 
 [sub_resource type="Theme" id="Theme_58ro6"]
 
@@ -58,12 +60,10 @@ script = ExtResource("1_ts2b4")
 modulate = Color(0.470588, 0.470588, 0.470588, 1)
 position = Vector2(848, 112)
 texture = ExtResource("2_hybak")
-metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]
-offset_top = 40.0
 offset_right = 1280.0
-offset_bottom = 488.0
+offset_bottom = 448.0
 theme_override_colors/font_outline_color = Color(0.117647, 0.117647, 0.117647, 1)
 theme_override_constants/outline_size = 24
 theme_override_fonts/font = ExtResource("3_53ar5")
@@ -72,13 +72,12 @@ text = "TULISKAN NAMA KAMU..."
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 448.0
-offset_top = 432.0
+offset_top = 392.0
 offset_right = 832.0
-offset_bottom = 496.0
+offset_bottom = 456.0
 mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5ajnr")
 
@@ -93,16 +92,40 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d1651")
 text = "Lanjutkan"
 flat = true
 metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 448.0
+offset_top = 472.0
+offset_right = 832.0
+offset_bottom = 536.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ajnr")
+
+[node name="Button2" type="Button" parent="Panel2"]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 64.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d1651")
+text = "Kembali ke Main Menu"
+flat = true
+metadata/_edit_group_ = true
 
 [node name="LineEdit" type="LineEdit" parent="."]
 offset_left = 448.0
-offset_top = 344.0
+offset_top = 304.0
 offset_right = 832.0
-offset_bottom = 408.0
+offset_bottom = 368.0
 theme = SubResource("Theme_58ro6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(0.470588, 0.470588, 0.470588, 1)
@@ -110,7 +133,6 @@ theme_override_font_sizes/font_size = 16
 placeholder_text = "Masukkan Nama (Maks. 12 Karakter)"
 alignment = 1
 max_length = 12
-metadata/_edit_lock_ = true
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 title = "Konfirmasi Nama"
@@ -129,4 +151,6 @@ libraries = {
 }
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel2/Button2" to="." method="_on_button_pressed"]
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

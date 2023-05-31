@@ -31,8 +31,13 @@ public partial class NameSelect : Node2D
 		}
 	}
 
+	private void _on_button_2_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://Scenes/start_screen.tscn");
+	}
+
 	private void _on_confirmation_dialog_confirmed()
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/main_menu.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/scene_1.tscn");
 	}
 }

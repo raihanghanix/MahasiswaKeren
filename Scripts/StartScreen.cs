@@ -1,17 +1,22 @@
 using Godot;
 using System;
 
-public partial class StartScreen : Node2D
+public partial class StartScreen : Control
 {
-	Button btn;
+	Control container, menu;
+	Button startButton;
+	AnimationPlayer anim;
 
 	public override void _Ready()
 	{
-		btn = GetNode<Button>("Button");
+		container = GetNode<Control>("Container");
+		menu = GetNode<Control>("Menu");
+		startButton = GetNode<Button>("Container/StartButton");
+		anim = GetNode<AnimationPlayer>("AnimationPlayer");
 	}
 
-	private void _on_button_pressed()
+	private void OnStartButtonPressed()
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/name_select.tscn");
+		anim.Play("MoveMenus");
 	}
 }

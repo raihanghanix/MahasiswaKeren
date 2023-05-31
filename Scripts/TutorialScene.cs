@@ -35,7 +35,7 @@ public partial class TutorialScene : Node2D
 
 	private void OnConfirmationDialogConfirmed()
 	{
-		GetTree().ChangeSceneToFile("Scenes/scene_1.tscn");
+		GetTree().ChangeSceneToFile("Scenes/name_select.tscn");
 	}
 
 	private void OnConfirmationDialogCanceled()
@@ -67,7 +67,7 @@ public partial class TutorialScene : Node2D
 		}
 		else 
 		{
-			GetTree().ChangeSceneToFile("Scenes/scene_1.tscn");
+			GetTree().ChangeSceneToFile("Scenes/name_select.tscn");
 		}
 	}
 }

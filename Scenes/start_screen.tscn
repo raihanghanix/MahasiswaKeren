@@ -1,17 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://bo1c8fh6cc6iv"]
+[gd_scene load_steps=13 format=3 uid="uid://bo1c8fh6cc6iv"]
 
 [ext_resource type="Script" path="res://Scripts/StartScreen.cs" id="1_18m56"]
 [ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="2_1w5ll"]
 [ext_resource type="Script" path="res://Scripts/ParallaxBackground.cs" id="2_r3cl2"]
 [ext_resource type="FontFile" uid="uid://dxtofwvuov7a8" path="res://Fonts/Margarine.ttf" id="3_b4edg"]
 [ext_resource type="Texture2D" uid="uid://43b6yo4jxt2x" path="res://Assets/Backgrounds/Halaman Pembuka.jpg" id="5_yu0kd"]
+[ext_resource type="PackedScene" uid="uid://csawjaiqkfk7o" path="res://Scenes/menu.tscn" id="6_0scrl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rs0r5"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.54902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6hku"]
 
 [sub_resource type="Animation" id="Animation_cqg11"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/Sprite2D:modulate")
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/StartScreenBG:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -31,56 +37,132 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Menu:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-512, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ns02c"]
 resource_name = "SceneTransition"
-length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/Sprite2D:modulate")
-tracks/0/interp = 1
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer/StartScreenBG:modulate")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.627451, 0.627451, 0.627451, 1)]
+"values": [Color(0, 0, 0, 1), Color(0.627451, 0.627451, 0.627451, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4o4ba"]
+resource_name = "MoveMenus"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1280, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-512, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b0uig"]
 _data = {
+"MoveMenus": SubResource("Animation_4o4ba"),
 "RESET": SubResource("Animation_cqg11"),
 "SceneTransition": SubResource("Animation_ns02c")
 }
 
-[node name="StartScreen" type="Node2D"]
+[node name="StartScreen" type="Control"]
 modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_18m56")
 metadata/_edit_lock_ = true
 
-[node name="Panel" type="Panel" parent="."]
-modulate = Color(1, 1, 1, 0.705882)
-offset_left = -8.0
-offset_top = 208.0
-offset_right = 1288.0
-offset_bottom = 464.0
+[node name="Menu" parent="." instance=ExtResource("6_0scrl")]
+layout_mode = 1
+offset_left = -512.0
+offset_right = 11520.0
+offset_bottom = 7200.0
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 16640.0
+offset_bottom = 9360.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="GameTitleBG" type="Panel" parent="Container"]
+layout_mode = 0
+offset_top = 208.0
+offset_right = 1280.0
+offset_bottom = 464.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rs0r5")
+metadata/_edit_lock_ = true
+
+[node name="GameTitle" type="Label" parent="Container"]
+layout_mode = 0
 offset_top = 16.0
 offset_right = 1280.0
 offset_bottom = 656.0
@@ -96,15 +178,20 @@ vertical_alignment = 1
 uppercase = true
 metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="Container"]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 464.0
 offset_right = 832.0
 offset_bottom = 528.0
+focus_mode = 1
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 0, 1)
+theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("3_b4edg")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y6hku")
 text = "Ketuk untuk memulai kisahmu"
 flat = true
 metadata/_edit_lock_ = true
@@ -116,7 +203,7 @@ script = ExtResource("2_r3cl2")
 motion_mirroring = Vector2(1280, 0)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="StartScreenBG" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(640, 360.5)
 scale = Vector2(0.3125, 0.312337)
@@ -129,4 +216,4 @@ libraries = {
 "": SubResource("AnimationLibrary_b0uig")
 }
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Container/StartButton" to="." method="OnStartButtonPressed"]
