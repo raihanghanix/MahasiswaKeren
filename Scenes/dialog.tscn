@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5y3ad71dueuv"]
+[gd_scene load_steps=2 format=3 uid="uid://cvneq2nm28d2y"]
 
-[ext_resource type="Script" path="res://Scripts/Dialog.cs" id="1_jo3sl"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37453"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nws0h"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 8
 border_width_top = 8
@@ -14,48 +12,45 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="DialogNode" type="Node2D"]
-script = ExtResource("1_jo3sl")
+[node name="Dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="DialogBox" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 512.0
 offset_right = 1216.0
 offset_bottom = 656.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_37453")
-metadata/_edit_group_ = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_nws0h")
 
-[node name="DialogBoxLabel" type="Label" parent="DialogBox"]
+[node name="DialogBoxText" type="Label" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 24.0
-offset_right = 1088.0
-offset_bottom = 120.0
+offset_left = 128.0
+offset_top = 528.0
+offset_right = 1152.0
+offset_bottom = 639.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "\"Apa yang sebaiknya ku lakukan sekarang?\""
 vertical_alignment = 1
 autowrap_mode = 3
-text_overrun_behavior = 1
-metadata/_edit_lock_ = true
 
-[node name="CharaName" type="Panel" parent="."]
-offset_left = 128.0
-offset_top = 456.0
-offset_right = 384.0
-offset_bottom = 520.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_37453")
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
-
-[node name="CharaNameLabel" type="Label" parent="CharaName"]
+[node name="CharaNameBox" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 248.0
-offset_bottom = 56.0
+offset_left = 128.0
+offset_top = 488.0
+offset_right = 384.0
+offset_bottom = 552.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nws0h")
+
+[node name="CharaNameText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 496.0
+offset_right = 376.0
+offset_bottom = 544.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "Player Name"
+text = "Nama Pemain"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_lock_ = true

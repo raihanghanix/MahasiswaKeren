@@ -1,43 +1,73 @@
 using Godot;
 using System;
 
-public partial class NameSelect : Node2D
+public partial class NameSelect : Control
 {
-	Button btn;
-	LineEdit inputField;
-	ConfirmationDialog confirmation;
 	public static string PlayerName { get; set; }
+
+	Control cw;
+	AnimationPlayer cwanim;
+	Label cwMesasge;
+	LineEdit lineEdit;
 
 	public override void _Ready()
 	{
-		btn = GetNode<Button>("Panel/Button");
-		inputField = GetNode<LineEdit>("LineEdit");
-		confirmation = GetNode<ConfirmationDialog>("ConfirmationDialog");
-
-		confirmation.Visible = false;
+		cw = GetNode<Control>("ConfirmationWindow");
+		cwMesasge = GetNode<Label>("ConfirmationWindow/Panel/Message");
+		cwanim = GetNode<AnimationPlayer>("ConfirmationWindow/CWAnimation");
+		lineEdit = GetNode<LineEdit>("LineEdit");
 	}
 
-	private void _on_button_pressed()
+	public override void _Process(double delta)
 	{
-		PlayerName = inputField.Text;
+		PlayerName = lineEdit.Text;
 
-		if (PlayerName.Length == 0)
+		if (Input.IsActionPressed("ui_cancel"))
 		{
-			GD.Print("Nama tidak boleh kosong!");
-		}
-		else
-		{
-			confirmation.Visible = true;
+			cwanim.Play("CW Close");
 		}
 	}
 
-	private void _on_button_2_pressed()
+	void OnNextButtonPressed()
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/start_screen.tscn");
+		if (PlayerName.Length > 0)
+		{
+		cwMesasge.Text = $"Apakah kamu sudah yakin dengan nama mu?\n {PlayerName}";
+		OpenConfirmationWindow();
+		}
 	}
 
-	private void _on_confirmation_dialog_confirmed()
+	void OnBackButtonPressed()
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/scene_1.tscn");
+		GetTree().ChangeSceneToFile("Scenes/start_screen.tscn");
+	}
+
+	void OnCWButtonPressed()
+	{
+		cwanim.Play("CW Close");
+	}
+
+	void OnCWYesButtonPressed()
+	{
+		GetTree().ChangeSceneToFile("Scenes/scene_1.tscn");
+	}
+
+	void OnCWNoButtonPressed()
+	{
+		cwanim.Play("CW Close");
+	}
+
+	void OnCWAnimationFinished(StringName animName)
+	{
+		if (animName == "CW Close")
+		{
+			cw.Visible = false;
+		}
+	}
+
+	void OpenConfirmationWindow()
+	{
+		cw.Visible = true;
+		cwanim.Play("CW Open");
 	}
 }

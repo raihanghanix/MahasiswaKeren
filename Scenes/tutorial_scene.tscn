@@ -1,24 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://c3foep8b4t7cd"]
+[gd_scene load_steps=35 format=3 uid="uid://c3foep8b4t7cd"]
 
 [ext_resource type="Texture2D" uid="uid://c7gllydm2lln8" path="res://Assets/Backgrounds/Kamar rumah.jpg" id="1_ianr6"]
 [ext_resource type="Script" path="res://Scripts/TutorialScene.cs" id="1_ii6s1"]
 [ext_resource type="Texture2D" uid="uid://bch2m85iu6mwi" path="res://Assets/Icons/Akademik.png" id="2_pjmqg"]
+[ext_resource type="PackedScene" uid="uid://cvneq2nm28d2y" path="res://Scenes/dialog.tscn" id="3_2cvrj"]
 [ext_resource type="Texture2D" uid="uid://cq1edt5tl2ch5" path="res://Assets/Icons/Sosial.png" id="3_vl4n1"]
 [ext_resource type="Texture2D" uid="uid://bikdd38bi1i17" path="res://Assets/Icons/Keuangan.png" id="4_em2op"]
+[ext_resource type="Script" path="res://Scripts/Paramater.cs" id="4_gtgbp"]
 [ext_resource type="Texture2D" uid="uid://cpqp1loertqyu" path="res://Assets/Icons/Hati.png" id="5_gb88y"]
 [ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="7_pds7r"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncpg8"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0.27451, 0.27451, 0.27451, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vs2nw"]
 bg_color = Color(0, 0, 0, 1)
@@ -32,8 +22,292 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlx65"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ttb4"]
+
+[sub_resource type="Animation" id="Animation_0l0hd"]
+resource_name = "Green"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parameters/AkademikLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Parameters/SosialLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parameters/KeuanganLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Parameters/HatiLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_trrbd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parameters/AkademikLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Parameters/SosialLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parameters/KeuanganLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Parameters/HatiLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uewey"]
+resource_name = "Red"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parameters/AkademikLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Parameters/SosialLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parameters/KeuanganLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Parameters/HatiLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gsv7u"]
+_data = {
+"Green": SubResource("Animation_0l0hd"),
+"RESET": SubResource("Animation_trrbd"),
+"Red": SubResource("Animation_uewey")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5h2d"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qeiuf"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 0.588235)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ltw6b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bw88y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob7mq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe4yl"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aft5t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiofo"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46v87"]
+
+[sub_resource type="Animation" id="Animation_v2nyo"]
+resource_name = "CW Close"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_niewh"]
+resource_name = "CW Open"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qqkbx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fyq5l"]
+_data = {
+"CW Close": SubResource("Animation_v2nyo"),
+"CW Open": SubResource("Animation_niewh"),
+"RESET": SubResource("Animation_qqkbx")
+}
 
 [sub_resource type="Animation" id="Animation_rtnie"]
 length = 0.001
@@ -72,136 +346,28 @@ _data = {
 "SceneTransition": SubResource("Animation_2vtpt")
 }
 
-[node name="TutorialScene" type="Node2D"]
+[node name="TutorialScene" type="Control"]
 modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ii6s1")
 
-[node name="Label" type="Label" parent="."]
-offset_top = -32.0
-offset_right = 128.0
-offset_bottom = -6.0
-text = "TUTORIAL"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="TutorialSceneBG" type="Sprite2D" parent="."]
 modulate = Color(0.392157, 0.392157, 0.392157, 1)
 position = Vector2(639.5, 358.5)
 scale = Vector2(0.768908, 0.761053)
 texture = ExtResource("1_ianr6")
 metadata/_edit_lock_ = true
 
-[node name="Parameters" type="Panel" parent="."]
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 640.0
-offset_bottom = 128.0
-metadata/_edit_lock_ = true
-
-[node name="Akademik" type="Sprite2D" parent="Parameters"]
-position = Vector2(96, 32)
-texture = ExtResource("2_pjmqg")
-
-[node name="Sosial" type="Sprite2D" parent="Parameters"]
-position = Vector2(224, 32)
-texture = ExtResource("3_vl4n1")
-
-[node name="Keuangan" type="Sprite2D" parent="Parameters"]
-position = Vector2(352, 32)
-texture = ExtResource("4_em2op")
-
-[node name="Hati" type="Sprite2D" parent="Parameters"]
+[node name="Dialog" parent="." instance=ExtResource("3_2cvrj")]
 modulate = Color(0.392157, 0.392157, 0.392157, 1)
-position = Vector2(480, 32)
-texture = ExtResource("5_gb88y")
+layout_mode = 1
 
-[node name="Button" type="Button" parent="Parameters"]
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-mouse_default_cursor_shape = 2
-text = "||"
-
-[node name="AkademikLabel" type="Label" parent="Parameters"]
-layout_mode = 0
-offset_left = 128.0
-offset_right = 192.0
-offset_bottom = 64.0
-theme_override_font_sizes/font_size = 24
-text = "50"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SosialLabel" type="Label" parent="Parameters"]
-layout_mode = 0
-offset_left = 256.0
-offset_right = 320.0
-offset_bottom = 64.0
-theme_override_font_sizes/font_size = 24
-text = "50"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="KeuanganLabel" type="Label" parent="Parameters"]
-layout_mode = 0
-offset_left = 384.0
-offset_right = 448.0
-offset_bottom = 64.0
-theme_override_font_sizes/font_size = 24
-text = "50"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HatiLabel" type="Label" parent="Parameters"]
-layout_mode = 0
-offset_left = 512.0
-offset_right = 576.0
-offset_bottom = 64.0
-theme_override_font_sizes/font_size = 24
-text = "??"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="DialogBox" type="Panel" parent="."]
-modulate = Color(0.392157, 0.392157, 0.392157, 1)
-offset_left = 64.0
-offset_top = 512.0
-offset_right = 1216.0
-offset_bottom = 656.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ncpg8")
-metadata/_edit_lock_ = true
-
-[node name="DialogBoxLabel" type="Label" parent="DialogBox"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 56.0
-offset_right = 1088.0
-offset_bottom = 127.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "\"Apa yang sebaiknya ku lakukan sekarang?\""
-autowrap_mode = 1
-
-[node name="CharaName" type="Panel" parent="."]
-modulate = Color(0.392157, 0.392157, 0.392157, 1)
-offset_left = 128.0
-offset_top = 488.0
-offset_right = 384.0
-offset_bottom = 552.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ncpg8")
-metadata/_edit_lock_ = true
-
-[node name="CharaNameLabel" type="Label" parent="CharaName"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 248.0
-offset_bottom = 56.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "Nama Pemain"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
-[node name="Control" type="Control" parent="."]
+[node name="Options" type="Control" parent="."]
 modulate = Color(0.392157, 0.392157, 0.392157, 1)
 layout_mode = 3
 anchors_preset = 0
@@ -211,7 +377,7 @@ offset_right = 1216.0
 offset_bottom = 448.0
 metadata/_edit_lock_ = true
 
-[node name="Opt1Panel" type="Panel" parent="Control"]
+[node name="Opt1Panel" type="Panel" parent="Options"]
 layout_mode = 0
 offset_left = 576.0
 offset_right = 832.0
@@ -219,7 +385,7 @@ offset_bottom = 96.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_vs2nw")
 metadata/_edit_group_ = true
 
-[node name="OptButton" type="Button" parent="Control/Opt1Panel"]
+[node name="OptButton" type="Button" parent="Options/Opt1Panel"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 96.0
@@ -229,7 +395,7 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 text = "\"Lanjut ngoding dulu gak siih\""
 flat = true
 
-[node name="Opt1Panel2" type="Panel" parent="Control"]
+[node name="Opt1Panel2" type="Panel" parent="Options"]
 layout_mode = 0
 offset_left = 576.0
 offset_top = 160.0
@@ -238,7 +404,7 @@ offset_bottom = 256.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_aouib")
 metadata/_edit_group_ = true
 
-[node name="OptButton" type="Button" parent="Control/Opt1Panel2"]
+[node name="OptButton" type="Button" parent="Options/Opt1Panel2"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 96.0
@@ -248,7 +414,7 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 text = "\"Berbicara dengan orang tua\""
 flat = true
 
-[node name="Opt1Panel3" type="Panel" parent="Control"]
+[node name="Opt1Panel3" type="Panel" parent="Options"]
 layout_mode = 0
 offset_left = 896.0
 offset_right = 1152.0
@@ -256,7 +422,7 @@ offset_bottom = 96.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hbmyh")
 metadata/_edit_group_ = true
 
-[node name="OptButton" type="Button" parent="Control/Opt1Panel3"]
+[node name="OptButton" type="Button" parent="Options/Opt1Panel3"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 96.0
@@ -268,7 +434,7 @@ flat = true
 text_overrun_behavior = 3
 clip_text = true
 
-[node name="Opt1Panel4" type="Panel" parent="Control"]
+[node name="Opt1Panel4" type="Panel" parent="Options"]
 layout_mode = 0
 offset_left = 896.0
 offset_top = 160.0
@@ -277,7 +443,7 @@ offset_bottom = 256.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wlx65")
 metadata/_edit_group_ = true
 
-[node name="OptButton" type="Button" parent="Control/Opt1Panel4"]
+[node name="OptButton" type="Button" parent="Options/Opt1Panel4"]
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 96.0
@@ -287,7 +453,98 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 text = "\"Menelpon teman\""
 flat = true
 
+[node name="Paramater" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_gtgbp")
+metadata/_edit_lock_ = true
+
+[node name="Parameters" type="Panel" parent="Paramater"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 128.0
+metadata/_edit_group_ = true
+
+[node name="Akademik" type="Sprite2D" parent="Paramater/Parameters"]
+position = Vector2(96, 32)
+texture = ExtResource("2_pjmqg")
+
+[node name="Sosial" type="Sprite2D" parent="Paramater/Parameters"]
+position = Vector2(224, 32)
+texture = ExtResource("3_vl4n1")
+
+[node name="Keuangan" type="Sprite2D" parent="Paramater/Parameters"]
+position = Vector2(352, 32)
+texture = ExtResource("4_em2op")
+
+[node name="Hati" type="Sprite2D" parent="Paramater/Parameters"]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+position = Vector2(480, 32)
+texture = ExtResource("5_gb88y")
+
+[node name="PauseButton" type="Button" parent="Paramater/Parameters"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6ttb4")
+text = "||"
+
+[node name="AkademikLabel" type="Label" parent="Paramater/Parameters"]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SosialLabel" type="Label" parent="Paramater/Parameters"]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeuanganLabel" type="Label" parent="Paramater/Parameters"]
+layout_mode = 0
+offset_left = 384.0
+offset_right = 448.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HatiLabel" type="Label" parent="Paramater/Parameters"]
+layout_mode = 0
+offset_left = 512.0
+offset_right = 576.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "??"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Paramater"]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_gsv7u")
+}
+
 [node name="TutorialBox" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 192.0
 offset_right = 576.0
@@ -338,13 +595,94 @@ text = "TUTORIAL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
-title = "Konfirmasi"
-position = Vector2i(320, 200)
-size = Vector2i(640, 360)
-ok_button_text = "Ya"
-dialog_text = "Apa kamu yakin ingin melewati tutorial?"
-cancel_button_text = "Tidak"
+[node name="ConfirmationWindow" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="ConfirmationWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qeiuf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qeiuf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qeiuf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ltw6b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bw88y")
+
+[node name="Panel" type="Panel" parent="ConfirmationWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -192.0
+offset_right = 320.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 192)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ob7mq")
+
+[node name="Title" type="Label" parent="ConfirmationWindow/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_pds7r")
+theme_override_font_sizes/font_size = 24
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="ConfirmationWindow/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = -240.0
+offset_right = 544.0
+offset_bottom = -192.0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fe4yl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aft5t")
+text = "Lanjutkan"
+
+[node name="SaveAndReturnButton" type="Button" parent="ConfirmationWindow/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = -176.0
+offset_right = 544.0
+offset_bottom = -128.0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oiofo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_46v87")
+text = "Kembali ke Main Menu"
+
+[node name="CWAnimation" type="AnimationPlayer" parent="ConfirmationWindow"]
+libraries = {
+"": SubResource("AnimationLibrary_fyq5l")
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "SceneTransition"
@@ -352,7 +690,10 @@ libraries = {
 "": SubResource("AnimationLibrary_4lgd5")
 }
 
+[connection signal="pressed" from="Paramater/Parameters/PauseButton" to="." method="OnPauseButtonPressed"]
 [connection signal="pressed" from="TutorialBox/SkipButton" to="." method="OnSkipButtonPressed"]
 [connection signal="pressed" from="TutorialBox/NextButton" to="." method="OnNextButtonPressed"]
-[connection signal="canceled" from="ConfirmationDialog" to="." method="OnConfirmationDialogCanceled"]
-[connection signal="confirmed" from="ConfirmationDialog" to="." method="OnConfirmationDialogConfirmed"]
+[connection signal="pressed" from="ConfirmationWindow/Button" to="." method="OnCWButtonPressed"]
+[connection signal="pressed" from="ConfirmationWindow/Panel/ContinueButton" to="." method="OnContinueButtonPressed"]
+[connection signal="pressed" from="ConfirmationWindow/Panel/SaveAndReturnButton" to="." method="OnSaveAndReturnButtonPressed"]
+[connection signal="animation_finished" from="ConfirmationWindow/CWAnimation" to="." method="OnCWAnimationFinished"]

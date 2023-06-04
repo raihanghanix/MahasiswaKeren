@@ -1,73 +1,113 @@
 using Godot;
 using System;
 
-public partial class TutorialScene : Node2D
+public partial class TutorialScene : Control
 {
-	ConfirmationDialog confirmation;
-	Panel tutorialBox, paramaters, dialogBox, charaName;
-	Label tutorialBoxText;
-	Control control;
+	int count = 0;
+
+	Control cw;
+	AnimationPlayer cwanim;
+	Label tutorialBoxLabel;
 	Button skipBtn, nextBtn;
-	private int count = 0;
 
 	public override void _Ready()
 	{
-		confirmation = GetNode<ConfirmationDialog>("ConfirmationDialog");
-		tutorialBox = GetNode<Panel>("TutorialBox");
-		paramaters = GetNode<Panel>("Parameters");
-		dialogBox = GetNode<Panel>("DialogBox");
-		charaName = GetNode<Panel>("CharaName");
-		tutorialBoxText = GetNode<Label>("TutorialBox/Label");
-		control = GetNode<Control>("Control");
 		skipBtn = GetNode<Button>("TutorialBox/SkipButton");
 		nextBtn = GetNode<Button>("TutorialBox/NextButton");
+		tutorialBoxLabel = GetNode<Label>("TutorialBox/Label");
 
-		tutorialBoxText.Text = "Parameter dari kiri ke kanan ada Akademis, Sosial, Keuangan, dan Cinta. Jika salah satu telah menyentuh angka 0 atau 100 Maka game akan berakhir. Setiap parameter akan memberikan ending yang berbeda.";
+		tutorialBoxLabel.Text = "Parameter dari kiri ke kanan ada Akademis, Sosial, Keuangan, dan Cinta. Jika salah satu telah menyentuh angka 0 atau 100. Maka game akan berakhir. Setiap parameter akan memberikan ending yang berbeda.";
 
-		confirmation.Visible = false;
+		cw = GetNode<Control>("ConfirmationWindow");
+		cwanim = GetNode<AnimationPlayer>("ConfirmationWindow/CWAnimation");
+		cw.Visible = false;
 	}
 
-	private void OnSkipButtonPressed()
+	public override void _Process(double delta)
 	{
-		tutorialBox.Visible = false;
-		confirmation.Visible = true;
+		if (Input.IsActionPressed("ui_cancel"))
+		{
+			cwanim.Play("CW Close");
+		}
 	}
 
-	private void OnConfirmationDialogConfirmed()
+	void OnSkipButtonPressed()
 	{
 		GetTree().ChangeSceneToFile("Scenes/name_select.tscn");
 	}
 
-	private void OnConfirmationDialogCanceled()
+	void OnNextButtonPressed()
 	{
-		tutorialBox.Visible = true;
-		confirmation.Visible = false;
-	}
+		var parameter = GetNode<Control>("Paramater");
+		var dialog = GetNode<Control>("Dialog");
+		var options = GetNode<Control>("Options");
 
-	private void OnNextButtonPressed()
-	{
 		count++;
+
 		if (count == 1)
 		{
-			tutorialBoxText.Text = "Pertanyaan akan disampaikan oleh setiap karakter. Pertanyaan dari karakter dapat berbentuk bahasa formal ataupun informal. Pertanyaan dapat memiliki makna ganda ataupun berkelanjutan, anda harus memperhatikan itu dengan baik.";
-			paramaters.Modulate = new Color(0.4f, 0.4f, 0.4f);
-			dialogBox.Modulate = new Color(1f, 1f, 1f);
-			charaName.Modulate = new Color(1f, 1f, 1f);
+			tutorialBoxLabel.Text = "Pertanyaan akan disampaikan oleh setiap karakter. Pertanyaan dari karakter dapat berbentuk bahasa formal ataupun informal. Pertanyaan dapat memiliki makna ganda ataupun berkelanjutan, anda harus memperhatikan itu dengan baik.";
+			parameter.Modulate = new Color(0.5f, 0.5f, 0.5f);
+			dialog.Modulate = new Color(1, 1, 1);
 		}
 		else if (count == 2)
 		{
-			tutorialBoxText.Text = "Berdasarkan pertanyaan disampaikan, nantinya anda akan dihadapkan oleh beberapa jawaban. Setiapjawaban akan memberikan efek yang berbeda kepada nilai parameter.";
-			dialogBox.Modulate = new Color(0.4f, 0.4f, 0.4f);
-			charaName.Modulate = new Color(0.4f, 0.4f, 0.4f);
-			control.Modulate = new Color(1f, 1f ,1f);
+			tutorialBoxLabel.Text = "Berdasarkan pertanyaan disampaikan, nantinya anda akan dihadapkan oleh beberapa jawaban. Setiapjawaban akan memberikan efek yang berbeda kepada nilai parameter.";
+			parameter.Modulate = new Color(0.5f, 0.5f, 0.5f);
+			dialog.Modulate = new Color(0.5f, 0.5f, 0.5f);
+			options.Modulate = new Color(1, 1, 1);
 			skipBtn.Visible = false;
-			nextBtn.Position = new Vector2(64f, 192f);
-			nextBtn.Size = new Vector2(384f, 40f);
+			nextBtn.Position = new Vector2(64, 192);
+			nextBtn.Size = new Vector2(384, 40);
 			nextBtn.Text = "Mulai Bermain!";
 		}
-		else 
+		else if (count == 3)
 		{
 			GetTree().ChangeSceneToFile("Scenes/name_select.tscn");
 		}
+	}
+
+	void OnPauseButtonPressed()
+	{
+		OpenConfirmationWindow();
+	}
+
+	void OnContinueButtonPressed()
+	{
+		cwanim.Play("CW Close");
+	}
+
+	void OnSaveAndReturnButtonPressed()
+	{
+		GetTree().ChangeSceneToFile("Scenes/start_screen.tscn");
+	}
+
+	void OnCWButtonPressed()
+	{
+		cwanim.Play("CW Close");
+	}
+
+	void OnCWYesButtonPressed()
+	{
+		GetTree().ChangeSceneToFile("Scenes/scene_1.tscn");
+	}
+
+	void OnCWNoButtonPressed()
+	{
+		cwanim.Play("CW Close");
+	}
+
+	void OnCWAnimationFinished(StringName animName)
+	{
+		if (animName == "CW Close")
+		{
+			cw.Visible = false;
+		}
+	}
+
+	void OpenConfirmationWindow()
+	{
+		cw.Visible = true;
+		cwanim.Play("CW Open");
 	}
 }

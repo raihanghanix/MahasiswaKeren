@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://3u3f6ax8v34q"]
+[gd_scene load_steps=23 format=3 uid="uid://3u3f6ax8v34q"]
 
 [ext_resource type="Script" path="res://Scripts/NameSelect.cs" id="1_ts2b4"]
 [ext_resource type="Texture2D" uid="uid://baqy2j3gv3k3o" path="res://Assets/Backgrounds/Ruang kuliah.jpg" id="2_hybak"]
 [ext_resource type="FontFile" uid="uid://dxtofwvuov7a8" path="res://Fonts/Margarine.ttf" id="3_53ar5"]
+[ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="4_4usxi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ajnr"]
 bg_color = Color(0.85098, 0.85098, 0.85098, 1)
@@ -14,6 +15,128 @@ corner_radius_bottom_left = 32
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d1651"]
 
 [sub_resource type="Theme" id="Theme_58ro6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qeiuf"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 0.588235)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ltw6b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bw88y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob7mq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe4yl"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aft5t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiofo"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46v87"]
+
+[sub_resource type="Animation" id="Animation_v2nyo"]
+resource_name = "CW Close"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_niewh"]
+resource_name = "CW Open"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qqkbx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fyq5l"]
+_data = {
+"CW Close": SubResource("Animation_v2nyo"),
+"CW Open": SubResource("Animation_niewh"),
+"RESET": SubResource("Animation_qqkbx")
+}
 
 [sub_resource type="Animation" id="Animation_wjxgu"]
 length = 0.001
@@ -52,16 +175,24 @@ _data = {
 "SceneTransition": SubResource("Animation_1q7do")
 }
 
-[node name="NameSelect" type="Node2D"]
+[node name="NameSelect" type="Control"]
 modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ts2b4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="NameSelectBG" type="Sprite2D" parent="."]
 modulate = Color(0.470588, 0.470588, 0.470588, 1)
-position = Vector2(848, 112)
+position = Vector2(647, 358.5)
+scale = Vector2(0.763529, 0.597879)
 texture = ExtResource("2_hybak")
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Heading" type="Label" parent="."]
 offset_right = 1280.0
 offset_bottom = 448.0
 theme_override_colors/font_outline_color = Color(0.117647, 0.117647, 0.117647, 1)
@@ -72,16 +203,19 @@ text = "TULISKAN NAMA KAMU..."
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+metadata/_edit_lock_ = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="NextButtonBG" type="Panel" parent="."]
 offset_left = 448.0
 offset_top = 392.0
 offset_right = 832.0
 offset_bottom = 456.0
 mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5ajnr")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="NextButton" type="Button" parent="NextButtonBG"]
 layout_mode = 0
 offset_right = 384.0
 offset_bottom = 64.0
@@ -95,17 +229,18 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d1651")
 text = "Lanjutkan"
 flat = true
-metadata/_edit_group_ = true
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="BackButtonBG" type="Panel" parent="."]
 offset_left = 448.0
 offset_top = 472.0
 offset_right = 832.0
 offset_bottom = 536.0
 mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5ajnr")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
-[node name="Button2" type="Button" parent="Panel2"]
+[node name="BackButton" type="Button" parent="BackButtonBG"]
 layout_mode = 0
 offset_right = 384.0
 offset_bottom = 64.0
@@ -119,7 +254,6 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d1651")
 text = "Kembali ke Main Menu"
 flat = true
-metadata/_edit_group_ = true
 
 [node name="LineEdit" type="LineEdit" parent="."]
 offset_left = 448.0
@@ -133,16 +267,114 @@ theme_override_font_sizes/font_size = 16
 placeholder_text = "Masukkan Nama (Maks. 12 Karakter)"
 alignment = 1
 max_length = 12
+caret_blink = true
+caret_blink_interval = 0.5
+metadata/_edit_lock_ = true
 
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
-title = "Konfirmasi Nama"
-position = Vector2i(320, 200)
-size = Vector2i(640, 360)
-unresizable = true
-always_on_top = true
-ok_button_text = "Ya"
-dialog_text = "Yakin dengan nama ini?"
-cancel_button_text = "Tidak"
+[node name="ConfirmationWindow" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="ConfirmationWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qeiuf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qeiuf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qeiuf")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ltw6b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bw88y")
+
+[node name="Panel" type="Panel" parent="ConfirmationWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -192.0
+offset_right = 320.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 192)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ob7mq")
+
+[node name="Title" type="Label" parent="ConfirmationWindow/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_4usxi")
+theme_override_font_sizes/font_size = 24
+text = "Perhatian!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="ConfirmationWindow/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 88.0
+offset_right = 320.0
+offset_bottom = 280.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Lorem ipsum dolor sit amet."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YesButton" type="Button" parent="ConfirmationWindow/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = -96.0
+offset_right = 224.0
+offset_bottom = -48.0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fe4yl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aft5t")
+text = "Ya"
+
+[node name="NoButton" type="Button" parent="ConfirmationWindow/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 416.0
+offset_top = -96.0
+offset_right = 544.0
+offset_bottom = -48.0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oiofo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_46v87")
+text = "Tidak"
+
+[node name="CWAnimation" type="AnimationPlayer" parent="ConfirmationWindow"]
+libraries = {
+"": SubResource("AnimationLibrary_fyq5l")
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "SceneTransition"
@@ -150,7 +382,9 @@ libraries = {
 "": SubResource("AnimationLibrary_harhg")
 }
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Panel2/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Panel2/Button2" to="." method="_on_button_pressed"]
-[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
+[connection signal="pressed" from="NextButtonBG/NextButton" to="." method="OnNextButtonPressed"]
+[connection signal="pressed" from="BackButtonBG/BackButton" to="." method="OnBackButtonPressed"]
+[connection signal="pressed" from="ConfirmationWindow/Button" to="." method="OnCWButtonPressed"]
+[connection signal="pressed" from="ConfirmationWindow/Panel/YesButton" to="." method="OnCWYesButtonPressed"]
+[connection signal="pressed" from="ConfirmationWindow/Panel/NoButton" to="." method="OnCWNoButtonPressed"]
+[connection signal="animation_finished" from="ConfirmationWindow/CWAnimation" to="." method="OnCWAnimationFinished"]
