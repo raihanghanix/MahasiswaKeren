@@ -1,78 +1,169 @@
 [gd_scene load_steps=35 format=3 uid="uid://c3foep8b4t7cd"]
 
-[ext_resource type="Texture2D" uid="uid://c7gllydm2lln8" path="res://Assets/Backgrounds/Kamar rumah.jpg" id="1_ianr6"]
 [ext_resource type="Script" path="res://Scripts/TutorialScene.cs" id="1_ii6s1"]
 [ext_resource type="Texture2D" uid="uid://bch2m85iu6mwi" path="res://Assets/Icons/Akademik.png" id="2_pjmqg"]
-[ext_resource type="PackedScene" uid="uid://cvneq2nm28d2y" path="res://Scenes/dialog.tscn" id="3_2cvrj"]
+[ext_resource type="Texture2D" uid="uid://d2eyvqhfnkn5m" path="res://Assets/Backgrounds/Kamar rumah.png" id="3_267ce"]
 [ext_resource type="Texture2D" uid="uid://cq1edt5tl2ch5" path="res://Assets/Icons/Sosial.png" id="3_vl4n1"]
 [ext_resource type="Texture2D" uid="uid://bikdd38bi1i17" path="res://Assets/Icons/Keuangan.png" id="4_em2op"]
-[ext_resource type="Script" path="res://Scripts/Paramater.cs" id="4_gtgbp"]
 [ext_resource type="Texture2D" uid="uid://cpqp1loertqyu" path="res://Assets/Icons/Hati.png" id="5_gb88y"]
 [ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="7_pds7r"]
+[ext_resource type="Texture2D" uid="uid://do1egfdel8vwr" path="res://Assets/Icons/house-solid.png" id="12_cxcrn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vs2nw"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nws0h"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aouib"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl6sf"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbmyh"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6gvg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlx65"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqsdm"]
+bg_color = Color(0.862745, 0.862745, 0.862745, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ttb4"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xa4w"]
 
-[sub_resource type="Animation" id="Animation_0l0hd"]
-resource_name = "Green"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85mj3"]
+bg_color = Color(0, 0, 0, 0.862745)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqngs"]
+bg_color = Color(0, 0, 0, 0.862745)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qq207"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[sub_resource type="Animation" id="Animation_wnke6"]
+resource_name = "AkademikGreen"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Parameters/AkademikLabel:modulate")
+tracks/0/path = NodePath("Parameters/AkademikLabel:theme_override_colors/font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Parameters/SosialLabel:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+
+[sub_resource type="Animation" id="Animation_g3b5k"]
+resource_name = "AkademikRed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parameters/AkademikLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1irvt"]
+resource_name = "CintaGreen"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parameters/HatiLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Parameters/KeuanganLabel:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
+
+[sub_resource type="Animation" id="Animation_v8oxf"]
+resource_name = "CintaRed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parameters/HatiLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qnlcv"]
+resource_name = "EkonomiGreen"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parameters/KeuanganLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Parameters/HatiLabel:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
+
+[sub_resource type="Animation" id="Animation_3doxp"]
+resource_name = "EkonomiRed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parameters/KeuanganLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_trrbd"]
@@ -125,53 +216,82 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Parameters/AkademikLabel:theme_override_colors/font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Parameters/SosialLabel:theme_override_colors/font_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Parameters/KeuanganLabel:theme_override_colors/font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Parameters/HatiLabel:theme_override_colors/font_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="Animation" id="Animation_uewey"]
-resource_name = "Red"
+[sub_resource type="Animation" id="Animation_nkm4w"]
+resource_name = "SosialGreen"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Parameters/AkademikLabel:modulate")
+tracks/0/path = NodePath("Parameters/SosialLabel:theme_override_colors/font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+"values": [Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Parameters/SosialLabel:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Parameters/KeuanganLabel:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Parameters/HatiLabel:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
+
+[sub_resource type="Animation" id="Animation_y2k08"]
+resource_name = "SosialRed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parameters/SosialLabel:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
@@ -179,135 +299,46 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gsv7u"]
 _data = {
-"Green": SubResource("Animation_0l0hd"),
+"AkademikGreen": SubResource("Animation_wnke6"),
+"AkademikRed": SubResource("Animation_g3b5k"),
+"CintaGreen": SubResource("Animation_1irvt"),
+"CintaRed": SubResource("Animation_v8oxf"),
+"EkonomiGreen": SubResource("Animation_qnlcv"),
+"EkonomiRed": SubResource("Animation_3doxp"),
 "RESET": SubResource("Animation_trrbd"),
-"Red": SubResource("Animation_uewey")
+"SosialGreen": SubResource("Animation_nkm4w"),
+"SosialRed": SubResource("Animation_y2k08")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5h2d"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crf5r"]
 bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qeiuf"]
-bg_color = Color(0.196078, 0.196078, 0.196078, 0.588235)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ltw6b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bw88y"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob7mq"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe4yl"]
-bg_color = Color(0, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aft5t"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiofo"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1knqi"]
 bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46v87"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vggw"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[sub_resource type="Animation" id="Animation_v2nyo"]
-resource_name = "CW Close"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Button:modulate")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_niewh"]
-resource_name = "CW Open"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Button:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_qqkbx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Button:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fyq5l"]
-_data = {
-"CW Close": SubResource("Animation_v2nyo"),
-"CW Open": SubResource("Animation_niewh"),
-"RESET": SubResource("Animation_qqkbx")
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mfstb"]
 
 [sub_resource type="Animation" id="Animation_rtnie"]
 length = 0.001
@@ -323,10 +354,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/RichTextLabel:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_2vtpt"]
 resource_name = "SceneTransition"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -334,16 +377,32 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 3),
+"times": PackedFloat32Array(0, 0.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_hjd4b"]
+resource_name = "TextAnim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4lgd5"]
 _data = {
 "RESET": SubResource("Animation_rtnie"),
-"SceneTransition": SubResource("Animation_2vtpt")
+"SceneTransition": SubResource("Animation_2vtpt"),
+"TextAnim": SubResource("Animation_hjd4b")
 }
 
 [node name="TutorialScene" type="Control"]
@@ -356,186 +415,253 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ii6s1")
 
-[node name="TutorialSceneBG" type="Sprite2D" parent="."]
-modulate = Color(0.392157, 0.392157, 0.392157, 1)
-position = Vector2(639.5, 358.5)
-scale = Vector2(0.768908, 0.761053)
-texture = ExtResource("1_ianr6")
-metadata/_edit_lock_ = true
-
-[node name="Dialog" parent="." instance=ExtResource("3_2cvrj")]
-modulate = Color(0.392157, 0.392157, 0.392157, 1)
-layout_mode = 1
-
-[node name="Options" type="Control" parent="."]
-modulate = Color(0.392157, 0.392157, 0.392157, 1)
-layout_mode = 3
-anchors_preset = 0
-offset_left = 64.0
-offset_top = 192.0
-offset_right = 1216.0
-offset_bottom = 448.0
-metadata/_edit_lock_ = true
-
-[node name="Opt1Panel" type="Panel" parent="Options"]
-layout_mode = 0
-offset_left = 576.0
-offset_right = 832.0
-offset_bottom = 96.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_vs2nw")
-metadata/_edit_group_ = true
-
-[node name="OptButton" type="Button" parent="Options/Opt1Panel"]
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 96.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-text = "\"Lanjut ngoding dulu gak siih\""
-flat = true
-
-[node name="Opt1Panel2" type="Panel" parent="Options"]
-layout_mode = 0
-offset_left = 576.0
-offset_top = 160.0
-offset_right = 832.0
-offset_bottom = 256.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_aouib")
-metadata/_edit_group_ = true
-
-[node name="OptButton" type="Button" parent="Options/Opt1Panel2"]
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 96.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-text = "\"Berbicara dengan orang tua\""
-flat = true
-
-[node name="Opt1Panel3" type="Panel" parent="Options"]
-layout_mode = 0
-offset_left = 896.0
-offset_right = 1152.0
-offset_bottom = 96.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_hbmyh")
-metadata/_edit_group_ = true
-
-[node name="OptButton" type="Button" parent="Options/Opt1Panel3"]
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 96.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-text = "\"Mengecek kembali barang dan persediaan\""
-flat = true
-text_overrun_behavior = 3
-clip_text = true
-
-[node name="Opt1Panel4" type="Panel" parent="Options"]
-layout_mode = 0
-offset_left = 896.0
-offset_top = 160.0
-offset_right = 1152.0
-offset_bottom = 256.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_wlx65")
-metadata/_edit_group_ = true
-
-[node name="OptButton" type="Button" parent="Options/Opt1Panel4"]
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 96.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-text = "\"Menelpon teman\""
-flat = true
-
-[node name="Paramater" type="Control" parent="."]
+[node name="BG" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("4_gtgbp")
-metadata/_edit_lock_ = true
 
-[node name="Parameters" type="Panel" parent="Paramater"]
+[node name="Sprite2D" type="Sprite2D" parent="BG"]
+modulate = Color(0.627451, 0.627451, 0.627451, 1)
+position = Vector2(640, 360)
+texture = ExtResource("3_267ce")
+
+[node name="Dialog" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="DialogBox" type="Panel" parent="Dialog"]
 layout_mode = 0
 offset_left = 64.0
+offset_top = 512.0
+offset_right = 1216.0
+offset_bottom = 656.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nws0h")
+metadata/_edit_group_ = true
+
+[node name="DialogBoxText" type="RichTextLabel" parent="Dialog/DialogBox"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 1024.0
+offset_bottom = 127.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "\"Apa yang sebaiknya ku lakukan sekarang?\""
+
+[node name="CharaNameBox" type="Panel" parent="Dialog"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 488.0
+offset_right = 384.0
+offset_bottom = 552.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dl6sf")
+metadata/_edit_group_ = true
+
+[node name="CharaNameText" type="Label" parent="Dialog/CharaNameBox"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 248.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Nama Pemain"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1280.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 576.0
+offset_top = 192.0
+offset_right = 1216.0
+offset_bottom = 448.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 128)
+theme_override_constants/separation = 16
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_e6gvg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqsdm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e6gvg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5xa4w")
+text = "Berbicara dengan orang tua"
+
+[node name="Button2" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_e6gvg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqsdm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e6gvg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5xa4w")
+text = "Menelpon teman"
+
+[node name="Button3" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_e6gvg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqsdm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e6gvg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5xa4w")
+text = "Lanjut ngoding"
+
+[node name="Button4" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_e6gvg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqsdm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e6gvg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5xa4w")
+text = "Mengecek kembali barang dan persediaan"
+
+[node name="Paramater" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1280.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Parameters" type="Panel" parent="Paramater"]
+layout_mode = 1
+offset_left = 128.0
 offset_top = 64.0
 offset_right = 640.0
 offset_bottom = 128.0
-metadata/_edit_group_ = true
-
-[node name="Akademik" type="Sprite2D" parent="Paramater/Parameters"]
-position = Vector2(96, 32)
-texture = ExtResource("2_pjmqg")
+theme_override_styles/panel = SubResource("StyleBoxFlat_85mj3")
 
 [node name="Sosial" type="Sprite2D" parent="Paramater/Parameters"]
-position = Vector2(224, 32)
+position = Vector2(160, 32)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_vl4n1")
 
 [node name="Keuangan" type="Sprite2D" parent="Paramater/Parameters"]
-position = Vector2(352, 32)
+position = Vector2(288, 32)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_em2op")
 
 [node name="Hati" type="Sprite2D" parent="Paramater/Parameters"]
 modulate = Color(0.392157, 0.392157, 0.392157, 1)
-position = Vector2(480, 32)
+position = Vector2(416, 32)
+scale = Vector2(0.8, 0.733333)
 texture = ExtResource("5_gb88y")
 
-[node name="PauseButton" type="Button" parent="Paramater/Parameters"]
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-mouse_default_cursor_shape = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6ttb4")
-text = "||"
+[node name="Akademik" type="Sprite2D" parent="Paramater/Parameters"]
+position = Vector2(32, 32)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_pjmqg")
 
 [node name="AkademikLabel" type="Label" parent="Paramater/Parameters"]
 layout_mode = 0
-offset_left = 128.0
-offset_right = 192.0
+offset_left = 64.0
+offset_right = 128.0
 offset_bottom = 64.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "50"
+text = "25"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SosialLabel" type="Label" parent="Paramater/Parameters"]
 layout_mode = 0
-offset_left = 256.0
-offset_right = 320.0
+offset_left = 192.0
+offset_right = 256.0
 offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "50"
+text = "25"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="KeuanganLabel" type="Label" parent="Paramater/Parameters"]
 layout_mode = 0
-offset_left = 384.0
-offset_right = 448.0
+offset_left = 320.0
+offset_right = 384.0
 offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "50"
+text = "25"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HatiLabel" type="Label" parent="Paramater/Parameters"]
 layout_mode = 0
-offset_left = 512.0
-offset_right = 576.0
+offset_left = 448.0
+offset_right = 512.0
 offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-text = "??"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Menu" type="Button" parent="Paramater/Parameters"]
+layout_mode = 0
+offset_left = -64.0
+offset_right = 1216.0
+offset_bottom = 1280.0
+scale = Vector2(0.05, 0.05)
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqngs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qq207")
+icon = ExtResource("12_cxcrn")
+icon_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Paramater"]
 autoplay = "RESET"
@@ -543,146 +669,48 @@ libraries = {
 "": SubResource("AnimationLibrary_gsv7u")
 }
 
-[node name="TutorialBox" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 192.0
-offset_right = 576.0
+offset_right = 512.0
 offset_bottom = 448.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_t5h2d")
-metadata/_edit_lock_ = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_crf5r")
 
-[node name="SkipButton" type="Button" parent="TutorialBox"]
+[node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 64.0
+offset_left = 24.0
 offset_top = 192.0
-offset_right = 192.0
+offset_right = 424.0
 offset_bottom = 232.0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Lewati"
+theme_override_styles/normal = SubResource("StyleBoxFlat_1knqi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2vggw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1knqi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mfstb")
+text = "Berikutnya"
 
-[node name="NextButton" type="Button" parent="TutorialBox"]
+[node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 192.0
-offset_right = 448.0
-offset_bottom = 232.0
-mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Lanjutkan"
-
-[node name="Label" type="Label" parent="TutorialBox"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 448.0
-offset_bottom = 192.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 14
-text = "Lorem Ipsum"
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="TutorialBox"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 32.0
-offset_right = 141.0
-offset_bottom = 58.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_pds7r")
-text = "TUTORIAL"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ConfirmationWindow" type="Control" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button" type="Button" parent="ConfirmationWindow"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_qeiuf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qeiuf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qeiuf")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ltw6b")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bw88y")
-
-[node name="Panel" type="Panel" parent="ConfirmationWindow"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = -192.0
-offset_right = 320.0
-offset_bottom = 192.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(320, 192)
-theme_override_styles/panel = SubResource("StyleBoxFlat_ob7mq")
-
-[node name="Title" type="Label" parent="ConfirmationWindow/Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -320.0
-offset_right = 320.0
-offset_bottom = 88.0
-grow_horizontal = 2
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 424.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_pds7r")
 theme_override_font_sizes/font_size = 24
-text = "Paused"
+text = "Tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueButton" type="Button" parent="ConfirmationWindow/Panel"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 96.0
-offset_top = -240.0
-offset_right = 544.0
-offset_bottom = -192.0
-grow_vertical = 0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fe4yl")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_aft5t")
-text = "Lanjutkan"
-
-[node name="SaveAndReturnButton" type="Button" parent="ConfirmationWindow/Panel"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 96.0
-offset_top = -176.0
-offset_right = 544.0
-offset_bottom = -128.0
-grow_vertical = 0
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_oiofo")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_46v87")
-text = "Kembali ke Main Menu"
-
-[node name="CWAnimation" type="AnimationPlayer" parent="ConfirmationWindow"]
-libraries = {
-"": SubResource("AnimationLibrary_fyq5l")
-}
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 72.0
+offset_right = 424.0
+offset_bottom = 176.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Parameter dari kiri ke kanan ada Akademis, Sosial, Keuangan, dan Cinta. Jika salah satu telah menyentuh angka 0 atau 100. Maka game akan berakhir. Setiap parameter akan memberikan ending yang berbeda."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "SceneTransition"
@@ -690,10 +718,5 @@ libraries = {
 "": SubResource("AnimationLibrary_4lgd5")
 }
 
-[connection signal="pressed" from="Paramater/Parameters/PauseButton" to="." method="OnPauseButtonPressed"]
-[connection signal="pressed" from="TutorialBox/SkipButton" to="." method="OnSkipButtonPressed"]
-[connection signal="pressed" from="TutorialBox/NextButton" to="." method="OnNextButtonPressed"]
-[connection signal="pressed" from="ConfirmationWindow/Button" to="." method="OnCWButtonPressed"]
-[connection signal="pressed" from="ConfirmationWindow/Panel/ContinueButton" to="." method="OnContinueButtonPressed"]
-[connection signal="pressed" from="ConfirmationWindow/Panel/SaveAndReturnButton" to="." method="OnSaveAndReturnButtonPressed"]
-[connection signal="animation_finished" from="ConfirmationWindow/CWAnimation" to="." method="OnCWAnimationFinished"]
+[connection signal="pressed" from="Panel/Button" to="." method="OnButtonPressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationFinished"]

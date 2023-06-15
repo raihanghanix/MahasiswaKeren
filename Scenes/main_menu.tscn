@@ -1,0 +1,234 @@
+[gd_scene load_steps=15 format=3 uid="uid://coyxknboo06uq"]
+
+[ext_resource type="Texture2D" uid="uid://43b6yo4jxt2x" path="res://Assets/Backgrounds/Halaman Pembuka.jpg" id="1_afwci"]
+[ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_wy7hr"]
+[ext_resource type="Script" path="res://Scripts/ParallaxBackground.cs" id="2_gswjd"]
+[ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="4_pvm4t"]
+[ext_resource type="PackedScene" uid="uid://vpvw8nh8n6g7" path="res://Scenes/confirmation_window.tscn" id="5_wrceq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3at3"]
+bg_color = Color(0.109804, 0.105882, 0.105882, 1)
+
+[sub_resource type="FontFile" id="FontFile_4ihxg"]
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tqmk"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12ykr"]
+bg_color = Color(0.784314, 0.784314, 0.784314, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clues"]
+bg_color = Color(0.588235, 0.588235, 0.588235, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km6sj"]
+
+[sub_resource type="Animation" id="Animation_spygb"]
+resource_name = "Menu Slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenuPanel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-512, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bwv2l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenuPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-512, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nm6fk"]
+_data = {
+"Menu Slide": SubResource("Animation_spygb"),
+"RESET": SubResource("Animation_bwv2l")
+}
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_wy7hr")
+cwScene = ExtResource("5_wrceq")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_gswjd")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+position = Vector2(640, 360)
+scale = Vector2(0.3125, 0.312772)
+texture = ExtResource("1_afwci")
+
+[node name="MainMenuPanel" type="Panel" parent="."]
+offset_left = -512.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q3at3")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuPanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 448.0
+offset_bottom = 656.0
+theme_override_constants/separation = 100
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="MainMenuTitle" type="Label" parent="MainMenuPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_constants/outline_size = 24
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = ExtResource("4_pvm4t")
+theme_override_font_sizes/font_size = 48
+text = "MAHASISWA 
+KEREN"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_lock_ = true
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MainMenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Continue" type="Button" parent="MainMenuPanel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_hover_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_focus_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_disabled_color = Color(0.666667, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("FontFile_4ihxg")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1tqmk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_12ykr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_clues")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1tqmk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_km6sj")
+disabled = true
+text = "Lanjutkan"
+
+[node name="New" type="Button" parent="MainMenuPanel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_hover_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_focus_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_fonts/font = SubResource("FontFile_4ihxg")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1tqmk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_12ykr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_clues")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1tqmk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_km6sj")
+text = "Mulai Baru"
+
+[node name="Tutorial" type="Button" parent="MainMenuPanel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_hover_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_focus_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_fonts/font = SubResource("FontFile_4ihxg")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1tqmk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_12ykr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_clues")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1tqmk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_km6sj")
+text = "Tutorial"
+
+[node name="Quit" type="Button" parent="MainMenuPanel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_hover_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_focus_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.109804, 0.105882, 0.105882, 1)
+theme_override_fonts/font = SubResource("FontFile_4ihxg")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1tqmk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_12ykr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_clues")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1tqmk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_km6sj")
+text = "Keluar"
+
+[node name="MainMenuCopy" type="Label" parent="MainMenuPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_constants/outline_size = 24
+theme_override_constants/line_spacing = 12
+theme_override_font_sizes/font_size = 12
+text = "Copyright © 2023 6MT Production, All Rights Reserved"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Menu Slide"
+libraries = {
+"": SubResource("AnimationLibrary_nm6fk")
+}
+
+[connection signal="pressed" from="MainMenuPanel/VBoxContainer/ButtonContainer/Continue" to="." method="OnContinuePressed"]
+[connection signal="pressed" from="MainMenuPanel/VBoxContainer/ButtonContainer/New" to="." method="OnNewPressed"]
+[connection signal="pressed" from="MainMenuPanel/VBoxContainer/ButtonContainer/Tutorial" to="." method="OnTutorialPressed"]
+[connection signal="pressed" from="MainMenuPanel/VBoxContainer/ButtonContainer/Quit" to="." method="OnQuitPressed"]

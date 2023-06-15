@@ -1,26 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqbeltu40hr32"]
+[gd_scene load_steps=7 format=3 uid="uid://c80ei5uuualdt"]
 
-[ext_resource type="Script" path="res://Scripts/Scene1.cs" id="1_k01cr"]
-[ext_resource type="Texture2D" uid="uid://c7gllydm2lln8" path="res://Assets/Backgrounds/Kamar rumah.jpg" id="3_oey35"]
+[ext_resource type="Script" path="res://Scripts/Scene1.cs" id="1_k3q55"]
 
-[sub_resource type="Animation" id="Animation_rgqci"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b7xt"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 
-[sub_resource type="Animation" id="Animation_6cxji"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avh7d"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kcd2r"]
+
+[sub_resource type="Animation" id="Animation_i864w"]
 resource_name = "SceneTransition"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -28,115 +20,50 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ws58m"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ag1fu"]
 _data = {
-"RESET": SubResource("Animation_rgqci"),
-"SceneTransition": SubResource("Animation_6cxji")
+"SceneTransition": SubResource("Animation_i864w")
 }
 
 [node name="Scene1" type="Control"]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k01cr")
+script = ExtResource("1_k3q55")
 
-[node name="SceneBG" type="Sprite2D" parent="."]
-modulate = Color(0.588235, 0.588235, 0.588235, 1)
-position = Vector2(639.5, 358.5)
-scale = Vector2(0.768908, 0.761053)
-texture = ExtResource("3_oey35")
-metadata/_edit_lock_ = true
+[node name="Button" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 520.0
+offset_right = 1208.0
+offset_bottom = 648.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b7xt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_avh7d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8b7xt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kcd2r")
+text = ">"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "SceneTransition"
 libraries = {
-"": SubResource("AnimationLibrary_ws58m")
+"": SubResource("AnimationLibrary_ag1fu")
 }
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -128.0
-offset_top = 64.0
-offset_right = -64.0
-offset_bottom = 128.0
-grow_horizontal = 0
-text = "Add"
-
-[node name="OptGroup" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_lock_ = true
-
-[node name="Opt1" type="Button" parent="OptGroup"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 216.0
-offset_top = 208.0
-offset_right = 984.0
-offset_bottom = 256.0
-grow_horizontal = 0
-text = "Berbicara dengan orang tua"
-
-[node name="Opt2" type="Button" parent="OptGroup"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 216.0
-offset_top = 272.0
-offset_right = 984.0
-offset_bottom = 320.0
-grow_horizontal = 0
-text = "Menelpon teman"
-
-[node name="Opt3" type="Button" parent="OptGroup"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 216.0
-offset_top = 336.0
-offset_right = 984.0
-offset_bottom = 384.0
-grow_horizontal = 0
-text = "Lanjut ngoding"
-
-[node name="Opt4" type="Button" parent="OptGroup"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 216.0
-offset_top = 400.0
-offset_right = 984.0
-offset_bottom = 448.0
-grow_horizontal = 0
-text = "Mengecek kembali barang dan persediaan"
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
-one_shot = true
-
 [connection signal="pressed" from="Button" to="." method="OnButtonPressed"]
-[connection signal="pressed" from="OptGroup/Opt1" to="." method="OnOpt1Pressed"]
-[connection signal="pressed" from="OptGroup/Opt2" to="." method="OnOpt2Pressed"]
-[connection signal="pressed" from="OptGroup/Opt3" to="." method="OnOpt3Pressed"]
-[connection signal="pressed" from="OptGroup/Opt4" to="." method="OnOpt4Pressed"]
-[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvdjolxk1ct80"]
+
+[ext_resource type="Script" path="res://Scripts/Character.cs" id="2_3wldx"]
+
+[sub_resource type="Animation" id="Animation_1v58b"]
+resource_name = "Slide"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-192, 384), Vector2(640, 384)]
+}
+
+[sub_resource type="Animation" id="Animation_es5j0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 384)]
+}
+
+[sub_resource type="Animation" id="Animation_j2rt0"]
+resource_name = "Slide1"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 384), Vector2(1472, 384)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wulcv"]
+_data = {
+"RESET": SubResource("Animation_es5j0"),
+"Slide": SubResource("Animation_1v58b"),
+"Slide1": SubResource("Animation_j2rt0")
+}
+
+[node name="Character" type="Sprite2D"]
+position = Vector2(640, 384)
+scale = Vector2(0.35, 0.35)
+script = ExtResource("2_3wldx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wulcv")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationFinished"]

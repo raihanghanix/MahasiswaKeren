@@ -1,0 +1,249 @@
+[gd_scene load_steps=12 format=3 uid="uid://04ebnxv1jm7a"]
+
+[ext_resource type="Script" path="res://Scripts/Scene6.cs" id="1_ylvjm"]
+[ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="2_iroxb"]
+[ext_resource type="FontFile" uid="uid://dxtofwvuov7a8" path="res://Fonts/Margarine.ttf" id="3_oqsu3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6o6id"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hd2qr"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ao7ix"]
+
+[sub_resource type="Animation" id="Animation_5b7r7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anim/Panel/VBoxContainer:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(834, 464)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anim/Panel/VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Anim/Panel:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 720)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Anim/Panel:theme_override_styles/panel:bg_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Anim:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_hos0h"]
+resource_name = "SceneTransition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5j1jr"]
+resource_name = "Transition"
+length = 6.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anim/Panel/VBoxContainer:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(834, 464), Vector2(1280, 464)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anim/Panel/VBoxContainer:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 3, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Anim/Panel:size")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 720), Vector2(1280, 720)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Anim/Panel:theme_override_styles/panel:bg_color")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Anim:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eflu4"]
+_data = {
+"RESET": SubResource("Animation_5b7r7"),
+"SceneTransition": SubResource("Animation_hos0h"),
+"Transition": SubResource("Animation_5j1jr")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqr15"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Scene6" type="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ylvjm")
+
+[node name="Button" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 520.0
+offset_right = 1208.0
+offset_bottom = 648.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_6o6id")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hd2qr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6o6id")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ao7ix")
+text = ">"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "SceneTransition"
+libraries = {
+"": SubResource("AnimationLibrary_eflu4")
+}
+
+[node name="Anim" type="Control" parent="."]
+visible = false
+top_level = true
+light_mask = 3
+visibility_layer = 3
+z_index = 2
+layout_mode = 1
+anchors_preset = 0
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="Anim"]
+layout_mode = 1
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lqr15")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Anim/Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_top = 112.0
+offset_right = 834.0
+offset_bottom = 576.0
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="Anim/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_iroxb")
+theme_override_font_sizes/font_size = 72
+text = "SELAMAT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Anim/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_oqsu3")
+theme_override_font_sizes/font_size = 72
+text = "Anda telah menyelesaikan prolog!
+:)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="OnButtonPressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationFinished"]

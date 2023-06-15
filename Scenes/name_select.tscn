@@ -1,20 +1,39 @@
-[gd_scene load_steps=23 format=3 uid="uid://3u3f6ax8v34q"]
+[gd_scene load_steps=25 format=3 uid="uid://3u3f6ax8v34q"]
 
 [ext_resource type="Script" path="res://Scripts/NameSelect.cs" id="1_ts2b4"]
-[ext_resource type="Texture2D" uid="uid://baqy2j3gv3k3o" path="res://Assets/Backgrounds/Ruang kuliah.jpg" id="2_hybak"]
+[ext_resource type="Texture2D" uid="uid://d2eyvqhfnkn5m" path="res://Assets/Backgrounds/Kamar rumah.png" id="2_mm52e"]
 [ext_resource type="FontFile" uid="uid://dxtofwvuov7a8" path="res://Fonts/Margarine.ttf" id="3_53ar5"]
 [ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="4_4usxi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ajnr"]
-bg_color = Color(0.85098, 0.85098, 0.85098, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d1651"]
 
 [sub_resource type="Theme" id="Theme_58ro6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dfgy"]
+bg_color = Color(0.313726, 0.313726, 0.313726, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gihjf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qeiuf"]
 bg_color = Color(0.196078, 0.196078, 0.196078, 0.588235)
@@ -186,16 +205,15 @@ grow_vertical = 2
 script = ExtResource("1_ts2b4")
 
 [node name="NameSelectBG" type="Sprite2D" parent="."]
-modulate = Color(0.470588, 0.470588, 0.470588, 1)
-position = Vector2(647, 358.5)
-scale = Vector2(0.763529, 0.597879)
-texture = ExtResource("2_hybak")
-metadata/_edit_lock_ = true
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+position = Vector2(640, 360)
+texture = ExtResource("2_mm52e")
 
 [node name="Heading" type="Label" parent="."]
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 448.0
-theme_override_colors/font_outline_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 24
 theme_override_fonts/font = ExtResource("3_53ar5")
 theme_override_font_sizes/font_size = 64
@@ -206,6 +224,7 @@ uppercase = true
 metadata/_edit_lock_ = true
 
 [node name="NextButtonBG" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 392.0
 offset_right = 832.0
@@ -231,6 +250,7 @@ text = "Lanjutkan"
 flat = true
 
 [node name="BackButtonBG" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 472.0
 offset_right = 832.0
@@ -256,14 +276,17 @@ text = "Kembali ke Main Menu"
 flat = true
 
 [node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 304.0
 offset_right = 832.0
 offset_bottom = 368.0
 theme = SubResource("Theme_58ro6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_placeholder_color = Color(0.470588, 0.470588, 0.470588, 1)
+theme_override_colors/font_placeholder_color = Color(0.627451, 0.627451, 0.627451, 1)
 theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_7dfgy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gihjf")
 placeholder_text = "Masukkan Nama (Maks. 12 Karakter)"
 alignment = 1
 max_length = 12

@@ -3,8 +3,12 @@ using System;
 
 public partial class Paramater : Control
 {
+    [Export] public PackedScene cwScene { get; set; }
+	ConfirmationWindow cw;
+
     Label akademikLabel, sosialLabel, keuanganLabel, hatiLabel;
     AnimationPlayer anim;
+    Button menu;
 
     public override void _Ready()
 	{
@@ -12,8 +16,12 @@ public partial class Paramater : Control
         sosialLabel = GetNode<Label>("Parameters/SosialLabel");
         keuanganLabel = GetNode<Label>("Parameters/KeuanganLabel");
         hatiLabel = GetNode<Label>("Parameters/HatiLabel");
-
         anim = GetNode<AnimationPlayer>("AnimationPlayer");
+
+        menu = GetNode<Button>("Parameters/Menu");
+
+        cw = cwScene.Instantiate<ConfirmationWindow>();
+		AddChild(cw);
 	}
 
 	public override void _Process(double delta)
@@ -24,8 +32,10 @@ public partial class Paramater : Control
         hatiLabel.Text = MySingleton.Cinta.ToString();
 	}
 
-    public void ChangeColor()
+    void OnMenuPressed()
     {
-        anim.Play("Green");
+        MySingleton.selection = 5;
+        cw.SetMessage("Apakah kamu ingin kembali ke halaman utama?");
+        cw.Open();
     }
 }

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvneq2nm28d2y"]
+[gd_scene load_steps=7 format=3 uid="uid://cvneq2nm28d2y"]
+
+[ext_resource type="Script" path="res://Scripts/Dialog.cs" id="1_fa0oe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nws0h"]
 bg_color = Color(1, 1, 1, 1)
@@ -6,15 +8,64 @@ border_width_left = 8
 border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
-border_color = Color(0.27451, 0.27451, 0.27451, 1)
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl6sf"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_0ljj3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogBox/DialogBoxText:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ji1aa"]
+resource_name = "TextAnim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogBox/DialogBoxText:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_686hw"]
+_data = {
+"RESET": SubResource("Animation_0ljj3"),
+"TextAnim": SubResource("Animation_ji1aa")
+}
+
 [node name="Dialog" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_fa0oe")
 
 [node name="DialogBox" type="Panel" parent="."]
 layout_mode = 0
@@ -23,17 +74,19 @@ offset_top = 512.0
 offset_right = 1216.0
 offset_bottom = 656.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nws0h")
+metadata/_edit_group_ = true
 
-[node name="DialogBoxText" type="Label" parent="."]
+[node name="DialogBoxText" type="RichTextLabel" parent="DialogBox"]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 528.0
-offset_right = 1152.0
-offset_bottom = 639.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 1024.0
+offset_bottom = 127.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
 text = "\"Apa yang sebaiknya ku lakukan sekarang?\""
-vertical_alignment = 1
-autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="CharaNameBox" type="Panel" parent="."]
 layout_mode = 0
@@ -41,16 +94,23 @@ offset_left = 128.0
 offset_top = 488.0
 offset_right = 384.0
 offset_bottom = 552.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_nws0h")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dl6sf")
+metadata/_edit_group_ = true
 
-[node name="CharaNameText" type="Label" parent="."]
+[node name="CharaNameText" type="Label" parent="CharaNameBox"]
 layout_mode = 0
-offset_left = 136.0
-offset_top = 496.0
-offset_right = 376.0
-offset_bottom = 544.0
+offset_left = 8.0
+offset_right = 248.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Nama Pemain"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_686hw")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnTextAnimFinished"]

@@ -20,7 +20,7 @@ public partial class NameSelect : Control
 
 	public override void _Process(double delta)
 	{
-		PlayerName = lineEdit.Text;
+		MySingleton.SetPlayerName(lineEdit.Text);
 
 		if (Input.IsActionPressed("ui_cancel"))
 		{
@@ -30,16 +30,16 @@ public partial class NameSelect : Control
 
 	void OnNextButtonPressed()
 	{
-		if (PlayerName.Length > 0)
+		if (MySingleton.playerName.Length > 0)
 		{
-		cwMesasge.Text = $"Apakah kamu sudah yakin dengan nama mu?\n {PlayerName}";
+		cwMesasge.Text = $"Apakah kamu sudah yakin dengan nama mu?\n {MySingleton.playerName}";
 		OpenConfirmationWindow();
 		}
 	}
 
 	void OnBackButtonPressed()
 	{
-		GetTree().ChangeSceneToFile("Scenes/start_screen.tscn");
+		GetTree().ChangeSceneToFile("Scenes/main_menu.tscn");
 	}
 
 	void OnCWButtonPressed()

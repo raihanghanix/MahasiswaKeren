@@ -4,7 +4,7 @@
     "week": 0,
     "dialog": {
       "Narator": [
-        "Nama kamu adalah *PlayerName*, kamu adalah mahasiswa sistem informasi semester 5, dan saat ini kamu sedang bersiap siap kembali ke kosan setelah liburan yang tenang dan menyenangkan."
+        "Nama kamu adalah *PlayerName*, kamu adalah mahasiswa sistem informasi semester 5, dan saat ini kamu sedang bersiap-siap kembali ke kosan setelah liburan yang tenang dan menyenangkan."
       ],
       "Player": ["Apa yang sebaiknya ku lakukan sekarang?"]
     },
@@ -73,9 +73,9 @@
         "Setelah berbincang selama 30 menit, kamu kembali ke kos."
       ],
       "Player": [
-        "Hehe iya bu tadi barusan aja sampai naik Travel Ratu Ibu, berangkat tadi malam."
+        "Hehe iya bu, tadi barusan aja sampai naik Travel Ratu Ibu, berangkat tadi malam."
       ],
-      "IbuKost": ["Mas *PlayerName* sudah Sampai ya?"]
+      "IbuKost": ["Mas *PlayerName* sudah sampai ya?"]
     }
   },
 
@@ -87,10 +87,10 @@
         "Kamu berkumpul dengan teman kos.",
         "Iqbal membuka bungkus jajanan.",
         "Kalian memakan jajanan bersama dan mengobrol sampai tengah hari.",
-        "Kamu Kembali ke kamar mu dan melanjukan merapikan barang-barang dikamar kosan mu."
+        "Kamu kembali ke kamar mu dan melanjukan merapikan barang-barang dikamar kosan mu."
       ],
       "Iqbal": ["Wedeh baru nyampe nih!", "Makan nih jajanan!"],
-      "Akhdan": ["Siapa sangka!,Aku juga baru nyampe sih kemarin."]
+      "Akhdan": ["Iya tuh, tumben baru nyampe."]
     }
   },
 
@@ -106,7 +106,7 @@
     "options": [
       {
         "id": 1,
-        "text": "Tidur Sampai sore",
+        "text": "Tidur sampai sore",
         "stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
       },
       {
@@ -116,7 +116,7 @@
       },
       {
         "id": 3,
-        "text": "Kelar cari angin",
+        "text": "Cari angin sebentar",
         "stats": { "affection": 0, "social": 0, "academic": 0, "economy": 0 }
       }
     ]
@@ -167,9 +167,10 @@
         "Arif Yang Berisik Tapi memiliki sosok yang dapat memimpin team dengan baik,Iqbal yang periang dan pintar,Akhdan yang ambisius dan perfeksionis",
         "Ghani Ramah dan sesalu dapat diandalkan, Sabrian yang Misterius namun mudah tertipu, Aleph yang imajinatif dan kreatif"
       ],
-      "Player": ["Foto ini masih ada ternyata, ada ada saja ya waktu itu...",
+      "Player": [
+        "Foto ini masih ada ternyata, ada ada saja ya waktu itu...",
         "Ngak kerasa ya sudah semester 5........"
-    ]
+      ]
     }
   },
 
@@ -210,9 +211,7 @@
         "Wajah putih mulus nan seperti bidadari walau hanya sekilah hati mu berdegub dikarenakan kecantikan dari wanita tersebut.",
         "Wanita tersebut pergi dari tempat itu dan meninggalkanmu sebuah kartu nama yang berisikan nama dan kontaknya."
       ],
-      "Player": ["Gak apa-apa kan kak?",
-        "(Cantiknya.....)"
-    ],
+      "Player": ["Gak apa-apa kan kak?", "(Cantiknya.....)"],
       "Heroine": [
         "Ah iya... makasih ya udah ngebantuin aku, terimakasih banget, maaf aku lagi buru-buru, ini kartu nama aku makasih ya!"
       ]

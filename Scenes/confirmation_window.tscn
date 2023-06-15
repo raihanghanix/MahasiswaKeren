@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://vpvw8nh8n6g7"]
+[gd_scene load_steps=15 format=3 uid="uid://vpvw8nh8n6g7"]
 
+[ext_resource type="Script" path="res://Scripts/ConfirmationWindow.cs" id="1_hkyat"]
 [ext_resource type="FontFile" uid="uid://c57kj0wrvyvod" path="res://Fonts/Super Bubble.ttf" id="1_tnrs7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qeiuf"]
@@ -34,34 +35,6 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46v87"]
 
-[sub_resource type="Animation" id="Animation_niewh"]
-resource_name = "CW Open"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Button:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_v2nyo"]
 resource_name = "CW Close"
 length = 0.25
@@ -88,6 +61,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_niewh"]
+resource_name = "CW Open"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_qqkbx"]
@@ -126,17 +127,16 @@ _data = {
 
 [node name="ConfirmationWindow" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+script = ExtResource("1_hkyat")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_qeiuf")
@@ -144,6 +144,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_qeiuf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qeiuf")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ltw6b")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bw88y")
+text = "1"
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -152,14 +153,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = -192.0
-offset_right = 320.0
-offset_bottom = 192.0
+offset_left = 320.0
+offset_top = 168.0
+offset_right = 960.0
+offset_bottom = 552.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(320, 192)
 theme_override_styles/panel = SubResource("StyleBoxFlat_ob7mq")
+metadata/_edit_group_ = true
 
 [node name="Title" type="Label" parent="Panel"]
 layout_mode = 1
@@ -227,3 +229,8 @@ text = "Tidak"
 libraries = {
 "": SubResource("AnimationLibrary_fyq5l")
 }
+
+[connection signal="pressed" from="Button" to="." method="OnButtonPressed"]
+[connection signal="pressed" from="Panel/YesButton" to="." method="OnYesButtonPressed"]
+[connection signal="pressed" from="Panel/NoButton" to="." method="OnNoButtonPressed"]
+[connection signal="animation_finished" from="CWAnimation" to="." method="OnCWAnimationFinished"]
