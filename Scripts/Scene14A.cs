@@ -47,7 +47,7 @@ public partial class Scene14A : Control
 		if (count == 2)
 		{
 			character.RemoveCharacter();
-			dialog.SetDialogText($"Narator", $"Dosen meniggalkan ruangan.");
+			dialog.SetDialogText($"Narator", $"Dosen pergi meniggalkan ruangan.");
 		}
 		if (count == 3)
 		{
@@ -57,7 +57,7 @@ public partial class Scene14A : Control
 		if (count == 4)
 		{
 			character.RemoveCharacter();
-			dialog.SetDialogText($"Narator", $"Teman-teman yang lain juga ikut pulang, sementara kamu segera menuju ke gedung utama untuk mendaftar menjadi anggota himpunan.");
+			dialog.SetDialogText($"Narator", $"Teman-teman yang lain juga pulang, sementara kamu segera menuju ke gedung utama untuk mendaftar menjadi anggota himpunan.");
 		}
 		if (count == 5)
 		{
