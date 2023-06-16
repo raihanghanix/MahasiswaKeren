@@ -31,7 +31,7 @@ public partial class Scene13B : Control
 
 		bg.SetBackground($"{MySingleton.backgroundPath}/Gazebo.png");
 		character.SetCharacter($"{MySingleton.characterPath}/Pengurus HIMA.png");
-		dialog.SetDialogText($"Pengurus HIMA", $"Kalau kalian tiba-tiba berubah pikiran kalian bisa datang ke gedung utama jam 2 siang nanti. Jika ada yang ingin ditanyakan, kalian bisa bertanya ke ketua kelas masing-masing.");
+		dialog.SetDialogText($"Pengurus HIMA", $"Jika kalian berubah pikiran kalian bisa datang ke gedung utama jam 2 siang nanti. Jika ada yang ingin ditanyakan, kalian bisa bertanya ke ketua kelas masing-masing.");
 		options.HideBoxes();
 
 		count = 0;
