@@ -47,7 +47,7 @@ public partial class Scene14B : Control
 		if (count == 2)
 		{
 			character.RemoveCharacter();
-			dialog.SetDialogText($"Narator", $"Dosen meniggalkan ruangan.");
+			dialog.SetDialogText($"Narator", $"Dosen pergi meniggalkan ruangan.");
 		}
 		if (count == 3)
 		{
