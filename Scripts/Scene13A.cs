@@ -48,7 +48,7 @@ public partial class Scene13A : Control
 		if (count == 2)
 		{
 			character.SetCharacter($"{MySingleton.characterPath}/Akhdan kuliah.png");
-			dialog.SetDialogText($"Akhdan", $"Aku mencium bau-bau konspirasi!");
+			dialog.SetDialogText($"Akhdan", $"Aku mencium aroma konspirasi!");
 		}
 		if (count == 3)
 		{
@@ -60,7 +60,7 @@ public partial class Scene13A : Control
 		{
 			character.RemoveCharacter();
 			character.SetCharacter($"{MySingleton.characterPath}/Iqbal kuliah.png");
-			dialog.SetDialogText($"Iqbal", $"Dia seperti terkena Genjutsu sales Oddo.");
+			dialog.SetDialogText($"Iqbal", $"Dia seperti terkena Genjutsu (hipnotis) sales Oddo.");
 		}
 		if (count == 5)
 		{
@@ -72,7 +72,7 @@ public partial class Scene13A : Control
 		{
 			character.RemoveCharacter();
 			character.SetCharacter($"{MySingleton.characterPath}/Ghani kuliah.png");
-			dialog.SetDialogText($"Ghani", $"Wkwkwkwk.");
+			dialog.SetDialogText($"Ghani", $"Awokwkwkwk.");
 		}
 		if (count == 7)
 		{
